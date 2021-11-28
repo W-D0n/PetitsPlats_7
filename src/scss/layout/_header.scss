@@ -1,0 +1,12 @@
+header,
+main {
+  width: 90vw;
+  margin: 0 auto;
+}
+.homepage__link{
+  display: flex;
+  justify-content: center;
+}
+.logo {
+  background: url(/private/src/assets/icons/logo.png) center center / 100% 100% no-repeat;
+}

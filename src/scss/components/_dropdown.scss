@@ -1,0 +1,106 @@
+@use '../abstracts/color' as clr;
+.navbar {
+  display: flex;
+  flex-direction: row;
+  height: 5rem;
+  justify-content: space-between;
+  z-index: 1;
+}
+.dropdown__container {
+  display: flex;
+  // color: clr.$neutral-font;
+  flex-grow: 1;
+  width: 20rem;
+  height: 4rem;
+  padding: 0.5rem;
+  border: none; 
+  border-radius: 5px;
+  border-style: hidden;
+  transition: all 300ms ease-in-out;
+
+  &:hover {
+    flex-grow: 5;
+  }
+}
+
+.dropdown__container {
+  &.ingredients {
+    background-color: clr.$bg-first;
+  }
+  &.appliance {
+    background-color: clr.$bg-second;
+  }
+  &.ustensils {
+    background-color: clr.$bg-third;
+  }
+}
+
+
+#ingredientsList{
+  background-color: clr.$bg-first;
+}
+#applianceList{
+  background-color: clr.$bg-second;
+}
+#ustensilsList{
+  background-color: clr.$bg-third;
+}
+
+
+.dropdown__content {
+  display: none;
+  flex-direction: row;
+  justify-content: space-between;
+  position: absolute;
+  background-color: #f6f6f6;
+  min-width: 15rem;
+  overflow: auto;
+  border: none;
+  z-index: 1;  
+  
+  &:focus {
+    opacity: 0.8;
+  }
+}
+
+.dropdown__content li {
+  padding: 0.7rem 1rem;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown__item:hover {
+  opacity: 0.8;
+}
+
+#dropdownSearchField {
+  box-sizing: border-box;
+  background-image: url('/private/src/assets/icons/search_.svg');
+  background-position: right;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  font-size: 1rem;
+  padding:0.5rem;
+  width: 100%;
+  border: none;
+  color: clr.$neutral-font;  
+  outline: none;
+  
+  &:focus {
+    outline: none;
+    opacity: 0.8;
+  }
+  &:hover {
+    flex-grow: 5;
+  }
+}
+
+
+
+#dropdownSearchField::placeholder,
+.dropdown__content li {
+  color: clr.$neutral-font ;
+}
+.show {
+  display: block;
+}

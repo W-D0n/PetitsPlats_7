@@ -1,0 +1,199 @@
+/*
+  Josh's Custom CSS Reset
+  https://www.joshwcomeau.com/css/custom-css-reset/
+*/
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+input, button, textarea, select {
+  font: inherit;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+#root, #__next {
+  isolation: isolate;
+}
+
+#myInput {
+  box-sizing: border-box;
+  background-image: url("searchicon.png");
+  background-position: 14px 12px;
+  background-repeat: no-repeat;
+  font-size: 1rem;
+  padding: 14px 20px 12px 45px;
+  border: none;
+  border-bottom: 1px solid #dad9d8;
+}
+
+#myInput:focus {
+  outline: 3px solid #dad9d8;
+}
+
+.inputSearch {
+  width: 90vw;
+  background-color: #dad9d8;
+  margin-block: 1rem;
+  height: 2rem;
+  border-radius: 5px;
+  border-style: hidden;
+  padding-inline: 1rem;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+.inputSearch:focus-visible {
+  outline: none;
+  border-radius: 5px;
+  border-style: hidden;
+}
+.inputSearch:focus {
+  border-color: #565e64;
+  box-shadow: 0 0 0 0.25rem rgba(130, 138, 145, 0.5);
+}
+
+.navbar {
+  display: flex;
+  flex-direction: row;
+  height: 5rem;
+  justify-content: space-between;
+  z-index: 1;
+}
+
+.dropdown__container {
+  display: flex;
+  flex-grow: 1;
+  width: 20rem;
+  height: 4rem;
+  padding: 0.5rem;
+  border: none;
+  border-radius: 5px;
+  border-style: hidden;
+  transition: all 300ms ease-in-out;
+}
+.dropdown__container:hover {
+  flex-grow: 5;
+}
+
+.dropdown__container.ingredients {
+  background-color: #3180f6;
+}
+.dropdown__container.appliance {
+  background-color: #4ed496;
+}
+.dropdown__container.ustensils {
+  background-color: #ed6454;
+}
+
+#ingredientsList {
+  background-color: #3180f6;
+}
+
+#applianceList {
+  background-color: #4ed496;
+}
+
+#ustensilsList {
+  background-color: #ed6454;
+}
+
+.dropdown__content {
+  display: none;
+  flex-direction: row;
+  justify-content: space-between;
+  position: absolute;
+  background-color: #f6f6f6;
+  min-width: 15rem;
+  overflow: auto;
+  border: none;
+  z-index: 1;
+}
+.dropdown__content:focus {
+  opacity: 0.8;
+}
+
+.dropdown__content li {
+  padding: 0.7rem 1rem;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown__item:hover {
+  opacity: 0.8;
+}
+
+#dropdownSearchField {
+  box-sizing: border-box;
+  background-image: url("/private/src/assets/icons/search_.svg");
+  background-position: right;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  font-size: 1rem;
+  padding: 0.5rem;
+  width: 100%;
+  border: none;
+  color: white;
+  outline: none;
+}
+#dropdownSearchField:focus {
+  outline: none;
+  opacity: 0.8;
+}
+#dropdownSearchField:hover {
+  flex-grow: 5;
+}
+
+#dropdownSearchField::-moz-placeholder {
+  color: white;
+}
+
+#dropdownSearchField:-ms-input-placeholder {
+  color: white;
+}
+
+#dropdownSearchField::placeholder,
+.dropdown__content li {
+  color: white;
+}
+
+.show {
+  display: block;
+}
+
+header,
+main {
+  width: 90vw;
+  margin: 0 auto;
+}
+
+.homepage__link {
+  display: flex;
+  justify-content: center;
+}
+
+.logo {
+  background: url(/private/src/assets/icons/logo.png) center center/100% 100% no-repeat;
+}
+
+h3 {
+  color: red;
+}/*# sourceMappingURL=style.css.map */
