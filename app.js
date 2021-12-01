@@ -1,11 +1,17 @@
 import './src/scss/style.scss';
 import './public/data/Recipes.json';
-import recipesFullList from './src/controllers/data';
-import { renderDropdowns } from './src/views/tags';
-import { test } from './src/controllers/tags';
+import { renderDOMTree } from './src/js/views/layout';
+import { renderDropdowns, showEventHandlers } from './src/js/views/tags';
 
-// document.addEventListener('DOMContentLoaded', renderDropdowns(recipesFullList));
+import { searchEventHandlers } from './src/js/controllers/search';
+// import { filterRecipes, searchEventHandlers } from './src/js/controllers/search';
+import recipesFullList from './src/js/controllers/data';
+
+/**
+ * @description Invok of DOM tree creation functions
+ */
+renderDOMTree();
 renderDropdowns(recipesFullList);
-test();
-
-// appel de fct controllers tags (en param data)
+showEventHandlers();
+// filterRecipes(recipesFullList);
+searchEventHandlers(recipesFullList);

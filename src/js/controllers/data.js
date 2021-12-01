@@ -1,4 +1,4 @@
-const urlAPI = './public/data/Recipes.json';
+const urlAPI = '/public/data/Recipes.json';
 
 /**
  * Request data from API, test response and return data.

@@ -1,3 +1,0 @@
-/* render
-  filter objectdata
-*/
