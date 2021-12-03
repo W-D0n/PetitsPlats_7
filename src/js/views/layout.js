@@ -1,7 +1,7 @@
 
 let logoPath = '/public/icons/logo.png';
 let zones = ['footer', 'main', 'header'];
-let sections = ['result__section', 'dropdown__section', 'tagList__section', 'searchArea'];
+let sections = ['result__section', 'dropdown__section', 'tag-list__section', 'searchArea'];
 let category = ['ingredients', 'appliance', 'ustensils'];
 
 /**
@@ -45,14 +45,9 @@ const createSection = (sectionName) => {
 const createSearchField = () => {
   return `
   <form id="searchBar" class="searchBar" role="search">
-    <label class="offscreen" for="inputSearch"></label>
-    <input type="search" spellcheck="true" class="inputSearch" autocomplete="off" role="searchbox" placeholder="Rechercher un ingrédient, un appareil, un ustensile, une recette…">
-    <div id="clear" class="none button clear" role="button" tabindex="0" aria-label="Clear search terms">
-      <i class="fas fa-times"></i>
-    </div>
-    <button id="searchButton" class="button searchButton" type="submit" aria-label="Submit button">
-      <span class="bi bi-search"></span>
-    </button>
+    <label class="offscreen" for="mainField"></label>
+    <input type="search" spellcheck="true" id="mainField" data-type="global" autocomplete="off" role="searchbox" aria-label="search by name, ingredient or description" placeholder="Rechercher un ingrédient, un appareil, un ustensile, une recette…">
+    <span class="bi bi-search"></span>
   </form>
   `;
 }
@@ -75,7 +70,7 @@ const createNavbar = () => {
 const createDropdown = (cat) => {
   return `
     <div class="dropdown__container ${cat}">
-      <input type="text" id="dropdownSearchField" autocomplete="false" placeholder="Type to filter...">
+      <input type="text" class="search__field dropdown" data-type="${cat}" autocomplete="false" placeholder="${cat}" aria-label="search by ${cat}">
       <ul class="dropdown__content" id="${cat}List"></ul>
     </div>
   `;

@@ -8,7 +8,7 @@ let ustensilList = [];
  * @param {*} data array of tags
  * @returns {Objects} Fill each array
  */
-export function setTagLists (data) {
+function setTagLists (data) {
   for (let i in data) {
     const recipe = data[i];
     recipe.ingredients.forEach(el => {
@@ -62,14 +62,6 @@ function createDropdownItems(data) {
 }
 
 /**
- * @description render function
- * @param {Object} data 
- */
-export function renderDropdowns(data) {
-  createDropdownItems(data);
-}
-
-/**
  * @description Show/Hide taglist of each dropdown menu
  */
 function showTagLists () {
@@ -94,6 +86,20 @@ function showTagLists () {
   // NEED REWORK - on outside click, close all dropdowns
 }
 
-export function showEventHandlers() {
+
+/**
+ * @description render function
+ * @param {Object} data 
+ */
+export function renderDropdowns(data) {
+  createDropdownItems(data);
+}
+/**
+ * @description event handlers
+ * 
+ */
+export function showDropdownEventHandlers() {
   showTagLists();
 }
+
+// la fonction de populate doit aller dans le controller
