@@ -4,7 +4,7 @@ import { renderDOMTree } from './src/js/views/layout';
 import { renderDropdowns, showDropdownEventHandlers } from './src/js/views/tags';
 
 import recipesFullList from './src/js/controllers/data';
-import { currentFilteredRecipes, searchEventHandler } from './src/js/controllers/search';
+import { searchEventHandler } from './src/js/controllers/search';
 import { tagsEventHandler } from './src/js/controllers/tags';
 import { renderCard } from './src/js/views/recipes';
 
@@ -17,6 +17,8 @@ const initApp = (recipesFullList) => {
 
 document.addEventListener('DOMContentLoaded', initApp(recipesFullList));
 
+searchEventHandler(recipesFullList);
+tagsEventHandler(recipesFullList);
 //render(updateFilteredRecipes(recipesArray, searchField));
 //render avec la current list ?
 // renderDropdowns(recipesFullList);
@@ -24,7 +26,5 @@ document.addEventListener('DOMContentLoaded', initApp(recipesFullList));
 // renderFilteredRecipes(filteredRecipes)
 
 // showDropdownEventHandlers();
-searchEventHandler(recipesFullList);
-tagsEventHandler(recipesFullList);
 
 // filterRecipes(recipesFullList);

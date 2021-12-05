@@ -1,5 +1,0 @@
-/* importer toutes les fonctions utilitaires des tags 
-  importer toutes les fonctions utilitaires du search input
-  importer le recipesfulllist
-
-*/

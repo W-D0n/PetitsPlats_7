@@ -14,7 +14,6 @@ const createZone = (element) => {
   <${element}></${element}>
   `;
 }
-
 /**
  * @description Create the logo of the page
  * @param {string} img image path
@@ -37,7 +36,6 @@ const createSection = (sectionName) => {
   <section id="${sectionName}"></section>
   `;
 }
-
 /**
  * @description Create principal search field
  * @returns {string} HTML string
@@ -45,13 +43,23 @@ const createSection = (sectionName) => {
 const createSearchField = () => {
   return `
   <form id="searchBar" class="searchBar" role="search">
-    <label class="offscreen" for="mainField"></label>
-    <input type="search" spellcheck="true" id="mainField" data-type="global" autocomplete="off" role="searchbox" aria-label="search by name, ingredient or description" placeholder="Rechercher un ingrédient, un appareil, un ustensile, une recette…">
-    <span class="bi bi-search"></span>
+  <label class="offscreen" for="mainField"></label>
+  <input type="search" spellcheck="true" id="mainField" data-type="global" autocomplete="off" role="searchbox" aria-label="search by name, ingredient or description" placeholder="Rechercher un ingrédient, un appareil, un ustensile, une recette…">
+  <span class="bi bi-search"></span>
   </form>
   `;
 }
-
+/**
+ * 
+ * @param {*} type 
+ * @returns {string} HTML string
+ */
+const createSelectedTag = (type, value) => {
+  return `
+  <div id="${type}">${value}</div>
+  <span class="remove__tag"></span>
+  `;
+}
 /** 
  * @description create navbar
  * @returns {string} HTML string
@@ -61,7 +69,6 @@ const createNavbar = () => {
     <nav class="navbar"></nav>
   `;
 }
-
 /**
  * @description create dropdown
  * @param {String} cat
@@ -75,7 +82,6 @@ const createDropdown = (cat) => {
     </div>
   `;
 }
-
 /**
  * @description Generic function that create first structure of the page
  * @param {string} type name
@@ -89,8 +95,6 @@ function addHTMLStructure(type, array, parent) {
     parent[0].insertAdjacentHTML('afterbegin', element);
   });
 }
-
-
 function addLogoDOM(img) {
   const parent = document.getElementsByTagName('header');
   parent[0].insertAdjacentHTML('beforeend', createLogo(img));
@@ -111,6 +115,15 @@ function addDropdowns(array) {
   
 }
 
+
+export function addSelectedTag(type, value) {
+  const parent = document.getElementById('tag-list__section');
+  parent.insertAdjacentHTML('beforeend', createSelectedTag(type));
+}
+export function removeSelectedTag(type) {
+  const parent = document.getElementById('tag-list__section');
+  parent.insertAdjacentHTML('beforeend', createSelectedTag(type));
+}
 
 /**
  * @description inject layout

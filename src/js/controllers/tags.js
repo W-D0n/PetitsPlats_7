@@ -1,4 +1,5 @@
 import { updateFilteredRecipes } from './filters';
+import { createDropdownItems } from '../views/tags';
 import { renderCard } from '../views/recipes';
 
 /**
@@ -14,8 +15,7 @@ function addTagToSearch() {
   const tags = [...document.querySelectorAll('.dropdown-item')];
 
   for (const item of tags) {
-    item.addEventListener('click', () => {
-      
+    item.addEventListener('click', () => {      
       const itemType = item.dataset.type;
       const itemValue = item.dataset.value;
       if (itemType!='appliance') {
@@ -28,13 +28,14 @@ function addTagToSearch() {
       const currentFilteredRecipes = updateFilteredRecipes();
       console.log(currentFilteredRecipes);
       renderCard(currentFilteredRecipes);
+      createDropdownItems(currentFilteredRecipes);
     });
-    // on peut leur ajouter une class show dans la tag list section
-    // relancer la recherche de recipes
-
-    // update du dom
   }
+  // au click sur un tag lancer la recherche de recipes
+  // update du dom
+  // ajout d'un tag cliquable dans la tag-list__section
 }
+
 function removeTagToSearch(obj) {
   // prendre les tags des dropdown ET les tags de la tag-list__section
   const tags = [...document.querySelectorAll('.dropdown-item')];

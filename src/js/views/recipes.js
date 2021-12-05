@@ -11,7 +11,7 @@ const createRecipeCard = ({id, name, ingredients, photo, time, description}) => 
         <h2 class="recipe__name">${name} ${id}</h2>
         <div class="time">
           <span class="clock"></span>
-          <p class="timing">${time}min</p>
+          <p class="duration">${time} min</p>
         </div>
       </div>
       <div class="card__info">

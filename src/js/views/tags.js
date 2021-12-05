@@ -1,3 +1,5 @@
+// import tagsSearchObject from './tagsSearchObject';
+
 //domelement > data > fct
 let ingredientList = [];
 let applianceList = [];
@@ -54,7 +56,7 @@ function populateDropdowns (array, category) {
  * @description inject all dropdown items
  * @param {Object} data 
  */
-function createDropdownItems(data) {
+export function createDropdownItems(data) {
   const { ingredientList, applianceList, ustensilList } = setTagLists(data);
   populateDropdowns(ingredientList, 'ingredients');
   populateDropdowns(applianceList, 'appliance');

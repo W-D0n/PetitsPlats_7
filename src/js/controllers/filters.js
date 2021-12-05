@@ -1,37 +1,35 @@
 import recipesFullList from './data';
 import { tagsSearchObject } from './tags';
 
+// export function inputFilter (input, recipe) {
+//   if (filterByText(input, recipe) || filterByIngredients(input, recipe) || filterByAppliance(input, recipe)) {
+//     return true;
+//   }
+//   return false;
+// }
 
+// export function updateFilter (input, recipe, category) {
+//   if (category === 'ingredients') {
+//     return filterByIngredients(input, recipe);
+//   }
+//   if (category === 'appliance') {
+//     return filterByAppliance(input, recipe);
+//   }
+//   if (category === 'ustensils') {
+//     return filterByUstensils(input, recipe);
+//   }  
+//   return false;
+// }
 
-export function inputFilter (input, recipe) {
-  if (filterByText(input, recipe) || filterByIngredients(input, recipe) || filterByAppliance(input, recipe)) {
-    return true;
-  }
-  return false;
-}
-export function updateFilter (input, recipe, category) {
-  if (category === 'ingredients') {
-    return filterByIngredients(input, recipe);
-  }
-  if (category === 'appliance') {
-    return filterByAppliance(input, recipe);
-  }
-  if (category === 'ustensils') {
-    return filterByUstensils(input, recipe);
-  }  
-  return false;
-}
-
-export function filterByText(input, recipe) {  
-  const name = recipe.name.toLowerCase();
-  const desc = recipe.description.toLowerCase();
-  if ((name.match(input)) || (desc.match(input))) {
-    return true;
-  }
-  return false;
-}
-
-export function filterByIngredients (input, recipe) {  
+// function filterByText(input, recipe) {  
+//   const name = recipe.name.toLowerCase();
+//   const desc = recipe.description.toLowerCase();
+//   if ((name.match(input)) || (desc.match(input))) {
+//     return true;
+//   }
+//   return false;
+// }
+function filterByIngredients (input, recipe) {  
   for (let i = 0; i < recipe.length; i++) {
     const element = recipe[i];
     const ingredientLowerCase = element.ingredient.toLowerCase();    
@@ -41,35 +39,34 @@ export function filterByIngredients (input, recipe) {
   }
   return false;
 }
-export function filterByAppliance (input, recipe) {
-  const appliance = recipe.appliance.toLowerCase();    
-  if (appliance.match(input)) {
-    return true;
-  }
-  return false;
-}
-export function filterByUstensils (input, recipe) {
-  for (let i = 0; i < recipe.length; i++) {
-    const element = recipe[i];
-    const ustensilLowerCase = element.toLowerCase();    
-    if (ustensilLowerCase.match(input)) {
-      return true;
-    }
-  }
-  return false;
-}
+// function filterByAppliance (input, recipe) {
+//   const appliance = recipe.appliance.toLowerCase();    
+//   if (appliance.match(input)) {
+//     return true;
+//   }
+//   return false;
+// }
+// function filterByUstensils (input, recipe) {
+//   for (let i = 0; i < recipe.length; i++) {
+//     const element = recipe[i];
+//     const ustensilLowerCase = element.toLowerCase();    
+//     if (ustensilLowerCase.match(input)) {
+//       return true;
+//     }
+//   }
+//   return false;
+// }
 
-/**
- *@description reset current filteredRecipes
- * @param {Object} recipeIngredients 
- * @returns {Object} recipeIngredients
- */
-export function resetCurrentFilteredRecipes (currentArray) {
-  return {
-    currentArray : [...recipesFullList]
-  };
-}
-
+// /**
+//  *@description reset current filteredRecipes
+//  * @param {Object} recipeIngredients 
+//  * @returns {Object} recipeIngredients
+//  */
+// export function resetCurrentFilteredRecipes (currentArray) {
+//   return {
+//     currentArray : [...recipesFullList]
+//   };
+// }
 
 export function filterRecipeByIngredientTags (recipeIngredients) {
   tagsSearchObject.ingredients.forEach((ingredientTag) => {
@@ -88,6 +85,29 @@ export function filterRecipeByUstensilsTags(recipeUstensils) {
   return true;
 }
 
+export function filterDisplayedTags(field) {
+  let nodeList = document.querySelectorAll(`#${field.dataset.type}List li`);
+  filterTagsMatchingWithSearchText (nodeList, field.value.toLowerCase());
+}
+
+function filterTagsMatchingWithSearchText (nodeList, searchText) {
+  for (let i = 0; i < nodeList.length; i++) {
+    const element = nodeList[i];
+    if(element.textContent.toLowerCase().match(searchText)) {
+      element.style.display = 'block';
+    } else {
+      element.style.display = 'none';
+    }
+  }
+}
+
+export function displayAllTags(fieldType) {
+  let nodeList = document.querySelectorAll(`#${fieldType}List li`);
+  for (let i = 0; i < nodeList.length; i++) {
+    const element = nodeList[i];
+    element.style.display = 'block';
+  }
+}
 
 /**
  * @description Filter recipes by ingredient tags.
@@ -119,6 +139,3 @@ export function updateFilteredRecipes() {
   console.log("currentFilteredRecipes : ", currentFilteredRecipes);
   return currentFilteredRecipes;
 }
-
-//idée pour filter, si une valeur est incluse dans l'ensemble = true, sinon false.
-// si true on supprime la valeur de l'ensemble.
