@@ -14,7 +14,6 @@ async function getAllRecipes(){
   try {
     const response = await fetch(req);
     const jsonRecipesData = await response.json();
-    // console.log('Step 1 : Fetch du json');
     
     return jsonRecipesData.recipes;
   } catch (error) {

@@ -1,34 +1,7 @@
 import recipesFullList from './data';
-import { tagsSearchObject } from './tags';
+import { tagList } from './tags';
 
-// export function inputFilter (input, recipe) {
-//   if (filterByText(input, recipe) || filterByIngredients(input, recipe) || filterByAppliance(input, recipe)) {
-//     return true;
-//   }
-//   return false;
-// }
 
-// export function updateFilter (input, recipe, category) {
-//   if (category === 'ingredients') {
-//     return filterByIngredients(input, recipe);
-//   }
-//   if (category === 'appliance') {
-//     return filterByAppliance(input, recipe);
-//   }
-//   if (category === 'ustensils') {
-//     return filterByUstensils(input, recipe);
-//   }  
-//   return false;
-// }
-
-// function filterByText(input, recipe) {  
-//   const name = recipe.name.toLowerCase();
-//   const desc = recipe.description.toLowerCase();
-//   if ((name.match(input)) || (desc.match(input))) {
-//     return true;
-//   }
-//   return false;
-// }
 function filterByIngredients (input, recipe) {  
   for (let i = 0; i < recipe.length; i++) {
     const element = recipe[i];
@@ -39,37 +12,9 @@ function filterByIngredients (input, recipe) {
   }
   return false;
 }
-// function filterByAppliance (input, recipe) {
-//   const appliance = recipe.appliance.toLowerCase();    
-//   if (appliance.match(input)) {
-//     return true;
-//   }
-//   return false;
-// }
-// function filterByUstensils (input, recipe) {
-//   for (let i = 0; i < recipe.length; i++) {
-//     const element = recipe[i];
-//     const ustensilLowerCase = element.toLowerCase();    
-//     if (ustensilLowerCase.match(input)) {
-//       return true;
-//     }
-//   }
-//   return false;
-// }
-
-// /**
-//  *@description reset current filteredRecipes
-//  * @param {Object} recipeIngredients 
-//  * @returns {Object} recipeIngredients
-//  */
-// export function resetCurrentFilteredRecipes (currentArray) {
-//   return {
-//     currentArray : [...recipesFullList]
-//   };
-// }
 
 export function filterRecipeByIngredientTags (recipeIngredients) {
-  tagsSearchObject.ingredients.forEach((ingredientTag) => {
+  tagList.ingredients.forEach((ingredientTag) => {
     if (!recipeIngredients.includes(ingredientTag)) {
       return false;
     }
@@ -77,7 +22,7 @@ export function filterRecipeByIngredientTags (recipeIngredients) {
   return true;
 }
 export function filterRecipeByUstensilsTags(recipeUstensils) {
-  tagsSearchObject.ustensils.forEach((ustensilsTag) => {
+  tagList.ustensils.forEach((ustensilsTag) => {
     if (!recipeUstensils.includes(ustensilsTag)) {
       return false;
     }
@@ -101,7 +46,7 @@ function filterTagsMatchingWithSearchText (nodeList, searchText) {
   }
 }
 
-export function displayAllTags(fieldType) {
+export function displayAllDropdownTags(fieldType) {
   let nodeList = document.querySelectorAll(`#${fieldType}List li`);
   for (let i = 0; i < nodeList.length; i++) {
     const element = nodeList[i];
@@ -110,15 +55,17 @@ export function displayAllTags(fieldType) {
 }
 
 /**
- * @description Filter recipes by ingredient tags.
+ * @description Filter recipes by removing the recipes that don't match the searchquery
  * @returns {Object}
- *
  */
 export function updateFilteredRecipes() {
+  console.log('tagList', tagList);
+  console.log('tagList.ingredients', tagList.ingredients);
+  console.log('tagList.ustensils', tagList.ustensils);
+  console.log('tagList.appliance', tagList.appliance);
   const mainSearchField = document.getElementById('mainField');
   let currentFilteredRecipes = [...recipesFullList];
   const searchWithTextField =  mainSearchField.value.length > 2;
-  console.log('searchWithTextField : ', searchWithTextField);
   for (let i = 0; i < currentFilteredRecipes.length; i++) {
     const recipe = currentFilteredRecipes[i];
     if(
@@ -128,14 +75,14 @@ export function updateFilteredRecipes() {
           !recipe.description.toLowerCase().match(mainSearchField.value) && 
           !filterByIngredients(mainSearchField.value, recipe.ingredients)         
         ) || 
-        (tagsSearchObject.ingredients.size > 0 && !filterRecipeByIngredientTags(recipe.ingredients)) ||
-        (tagsSearchObject.ustensils.size > 0 && !filterRecipeByUstensilsTags(recipe.ustensils)) ||
-        (tagsSearchObject.appliance && recipe.appliance != tagsSearchObject.appliance)
+        (tagList.ingredients.size > 0 && !filterRecipeByIngredientTags(recipe.ingredients)) ||
+        (tagList.appliance && recipe.appliance != tagList.appliance) ||
+        (tagList.ustensils.size > 0 && !filterRecipeByUstensilsTags(recipe.ustensils)) 
       ) {
         currentFilteredRecipes.splice(i, 1);
         i--;
     }
   }
-  console.log("currentFilteredRecipes : ", currentFilteredRecipes);
+  console.log('currentFilteredRecipes : ', currentFilteredRecipes);
   return currentFilteredRecipes;
 }

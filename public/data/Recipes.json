@@ -17,7 +17,7 @@
         {
           "ingredient" : "Crème de coco",
           "quantity" : 2,
-          "unit" : "cuillères à soupe"
+          "unit" : "Cuillères à soupe"
         },
         {
           "ingredient" : "Sucre",
@@ -100,7 +100,7 @@
         {
           "ingredient": "Huile d'olive",
           "quantity": 1,
-          "unit": "cuillères à soupe"
+          "unit": "Cuillères à soupe"
         }
       ],
       "time": 80,
@@ -167,7 +167,7 @@
         {
           "ingredient": "Crème fraîche",
           "quantity": 2,
-          "unit": "cuillères à soupe"
+          "unit": "Cuillères à soupe"
         },
         {
           "ingredient": "gruyère râpé",
@@ -177,7 +177,7 @@
         {
           "ingredient": "Moutarde de Dijon",
           "quantity": 1,
-          "unit": "cuillères à soupe"
+          "unit": "Cuillères à soupe"
         }
       ],
       "time": 45,
@@ -544,7 +544,7 @@
         }
       ],
       "time": 60,
-      "description":"Mélangez dans un saladier, la farine, les oeufs, et le lait. Battez jusqu'à avoir une masse homogène. Pendant ce temps faites fondre le beurre et ajoutez en une partie à la pâte à crêpes. Faire fondre le chocolat ( avec le reste du beurre salé ). Lorsque vous chauffez les crêpes. Ajouter le chocolat fondu et les bananes coupées en rondelles. Ajoutez une touche de chantilly pour les gourmands",
+      "description":"Mélangez dans un saladier, la farine, les oeufs, et le lait. Battez jusqu'à avoir une masse homogène. Pendant ce temps faites fondre le beurre et ajoutez en une partie à la pâte à crêpes. Faire fondre le chocolat ( avec le reste du beurre salé ). Lorsque vous chauffez les crêpes. Ajouter le chocolat fondu et les banane coupées en rondelles. Ajoutez une touche de chantilly pour les gourmands",
       "appliance": "Poële à crêpe",
       "ustensils":["saladier", "louche", "cuillère en bois"]
     },
@@ -601,7 +601,7 @@
         {
           "ingredient": "Jus de citron",
           "quantity": 1,
-          "unit":"cuillères à soupe"
+          "unit":"Cuillères à soupe"
         },
         {
           "ingredient": "Glaçons",
@@ -702,7 +702,7 @@
         {
           "ingredient": "huile d'olive",
           "quantity": 1,
-          "unit": "cuillères à soupe"
+          "unit": "Cuillères à soupe"
         }
       ],
       "time": 30,
@@ -742,7 +742,7 @@
         {
           "ingredient": "Crème fraîche",
           "quantity" : 1,
-          "unit": "cuillères à soupe"
+          "unit": "Cuillères à soupe"
         }
       ],
       "time": 30,
@@ -856,7 +856,7 @@
         {
           "ingredient": "Mayonnaise",
           "quantity": 2,
-          "unit": "cuillères à soupe"
+          "unit": "Cuillères à soupe"
         }
       ],
       "time": 40,
@@ -1152,12 +1152,12 @@
         {
           "ingredient": "Fromage blanc",
           "quantity": 4,
-          "unit":"cuillères à soupe"
+          "unit":"Cuillères à soupe"
         },
         {
           "ingredient": "Jus de citron",
           "quantity": 1,
-          "unit": "cuillères à soupe"
+          "unit": "Cuillères à soupe"
         }
       ],
       "time": 5,
@@ -1214,12 +1214,12 @@
         {
           "ingredient": "Crème fraîche",
           "quantity": 2,
-          "unit":"cuillères à soupe"
+          "unit":"Cuillères à soupe"
         },
         {
           "ingredient": "Cumin",
           "quantity": 1,
-          "unit": "cuillères à café"
+          "unit": "Cuillères à café"
         },
         {
           "ingredient": "Noix de muscade",
@@ -1263,7 +1263,7 @@
         {
           "ingredient": "Maïzena",
           "quantity": 1,
-          "unit": "cuillères à soupe"
+          "unit": "Cuillères à soupe"
         }
       ],
       "time": 35,
@@ -1387,12 +1387,12 @@
         {
           "ingredient": "Sucre en poudre",
           "quantity": 4,
-          "unit":"cuillères à café"
+          "unit":"Cuillères à café"
         },
         {
           "ingredient": "Bicarbonate",
           "quantity": 1,
-          "unit": "cuillères à café"
+          "unit": "Cuillères à café"
         }
       ],
       "time": 10,
@@ -1665,7 +1665,7 @@
       "servings": 4,
       "ingredients": [
         {
-          "ingredient": "Bananes",
+          "ingredient": "Banane",
           "quantity": 2
         },
         {
@@ -1684,7 +1684,7 @@
         {
           "ingredient": "Miel",
           "quantity": 2,
-          "unit": "cuillères à soupe"
+          "unit": "Cuillères à soupe"
         }
       ],
       "time": 0,

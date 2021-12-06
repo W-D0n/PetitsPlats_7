@@ -49,17 +49,7 @@ const createSearchField = () => {
   </form>
   `;
 }
-/**
- * 
- * @param {*} type 
- * @returns {string} HTML string
- */
-const createSelectedTag = (type, value) => {
-  return `
-  <div id="${type}">${value}</div>
-  <span class="remove__tag"></span>
-  `;
-}
+
 /** 
  * @description create navbar
  * @returns {string} HTML string
@@ -103,9 +93,16 @@ function addSearchField() {
   const parent = document.getElementById('searchArea');
   parent.insertAdjacentHTML('beforeend', createSearchField());
 }
-function addNavbar() {
+/**
+ * @description adding tag and dropdown navbars to the DOM
+ */
+function addNavbars() {
   const parent = document.getElementById('dropdown__section');
   parent.insertAdjacentHTML('beforeend', createNavbar());
+  const section = document.getElementById('tag-list__section');
+  const ul = document.createElement('ul');
+  ul.classList.add('tag-list');
+  section.appendChild(ul);
 }
 function addDropdowns(array) {
   const parent = document.querySelector('.navbar');
@@ -115,10 +112,22 @@ function addDropdowns(array) {
   
 }
 
+/**
+ * @description
+ * @param {*} type 
+ * @returns {string} HTML string
+ */
+const createSelectedTag = (type, value) => {
+  return `
+  <li class="tag-list__item" data-type="${type}" data-value="${value}">${value}<span class="tag__close"></span></li>
+  `;
+}
 
 export function addSelectedTag(type, value) {
-  const parent = document.getElementById('tag-list__section');
-  parent.insertAdjacentHTML('beforeend', createSelectedTag(type));
+  const parent = document.querySelector('.tag-list');
+  parent.classList.add('tag-list');
+  
+  parent.insertAdjacentHTML('beforeend', createSelectedTag(type, value));
 }
 export function removeSelectedTag(type) {
   const parent = document.getElementById('tag-list__section');
@@ -133,6 +142,6 @@ export function renderDOMTree() {
   addHTMLStructure(createSection, sections, document.getElementsByTagName('main'));
   addLogoDOM(logoPath);
   addSearchField();
-  addNavbar();
+  addNavbars();
   addDropdowns(category);
 }
