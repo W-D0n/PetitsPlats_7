@@ -124,14 +124,9 @@ const createSelectedTag = (type, value) => {
 }
 
 export function addSelectedTag(type, value) {
-  const parent = document.querySelector('.tag-list');
-  parent.classList.add('tag-list');
-  
+  console.log(type, value);
+  const parent = document.querySelector('.tag-list');  
   parent.insertAdjacentHTML('beforeend', createSelectedTag(type, value));
-}
-export function removeSelectedTag(type) {
-  const parent = document.getElementById('tag-list__section');
-  parent.insertAdjacentHTML('beforeend', createSelectedTag(type));
 }
 
 /**

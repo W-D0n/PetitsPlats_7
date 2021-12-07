@@ -1,10 +1,12 @@
 import { updateFilteredRecipes } from './filters';
-import { createDropdownItems } from '../views/tags';
+import { renderDropdowns } from '../views/tags';
 import { renderCard } from '../views/recipesCards';
-import { addSelectedTag, removeSelectedTag } from '../views/layout';
+import { addSelectedTag } from '../views/layout';
+
+let filteredRecipes = [];
 
 /**
- * @description click et push eventlistener
+ * @description
  */
 export let tagList = {
   'ingredients': new Set(),
@@ -13,17 +15,16 @@ export let tagList = {
 };
 
 /**
- * @description click et push eventlistener
+ * @description 
  */
-function addSearchTag() {
+export function addSearchTag() {
+  const mainSearchField = document.getElementById('mainField');
   const tags = [...document.querySelectorAll('.dropdown-item')];
 
   for (const item of tags) {
-    item.addEventListener('click', () => {     
+    item.addEventListener('click', () => {
       const itemType = item.dataset.type;
-      console.log('itemType : ', itemType);
       const itemValue = item.dataset.value;
-      console.log('itemValue : ', itemValue);
 
       if (itemType!='appliance') {
         tagList[itemType].add(itemValue);
@@ -32,40 +33,47 @@ function addSearchTag() {
         tagList[itemType] = itemValue;
         console.log(tagList);
       }
-      const currentFilteredRecipes = updateFilteredRecipes();
-      
-      console.log(currentFilteredRecipes);
-      renderCard(currentFilteredRecipes);
-      createDropdownItems(currentFilteredRecipes);
       addSelectedTag(itemType, itemValue);
+      filteredRecipes = updateFilteredRecipes(mainSearchField);
+      
+      console.log('AFTER Add Tag', filteredRecipes);
+      renderCard(filteredRecipes);
+      renderDropdowns(filteredRecipes);
     });
   }
-  // au click sur un tag lancer la recherche de recipes grace à tagList
-  
-  // update du dom
-  // ajout d'un tag cliquable dans la tag-list__section
 }
 
-function removeSearchTag(obj) {
-  // prendre les tags des dropdown ET les tags de la tag-list__section
-  const tags = [...document.querySelectorAll('.dropdown-item')];
-  for (const item of tags) {
-    item.addEventListener('click', () => {
+function removeSearchTag() {
+  const mainSearchField = document.getElementById('mainField');
+  const selectedTagList = document.querySelectorAll('.tag-list');
+  for (const item of selectedTagList) {
+    item.addEventListener('click', (e) => {
+      // console.log(e.target);
+      item.remove(e.target);
+      const itemType = e.target.dataset.type;
+      const itemValue = e.target.dataset.value;
+      console.log('itemType', itemType);
+      console.log('itemValue', itemValue);
 
+      if (itemType!='appliance') {
+        tagList[itemType].delete(itemValue);
+        console.log('tagList', tagList);
+      } else {
+        tagList[itemType].delete(itemValue);
+        console.log('tagList', tagList);
+      }
+      filteredRecipes = updateFilteredRecipes(mainSearchField);
+      console.log('AFTER Remove Tag', filteredRecipes);
+      renderCard(filteredRecipes);
+      renderDropdowns(filteredRecipes);
     });
   }
-  // à tester element.quantity ? undefined : li.remove();
-  // au click sur un tag = remove de l'object tagList si présent
-  // if (tagList.contains(item))
-
-  // relancer la recherche de recipes
-
-  // update du dom
 }
+
 /**
  * @description
  */
 export function tagsEventHandler(recipesArray) {
-  addSearchTag();
   renderCard(recipesArray);
+  // removeSearchTag();
 }

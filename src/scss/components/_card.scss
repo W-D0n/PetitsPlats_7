@@ -1,10 +1,5 @@
 @use '../abstracts/color' as clr;
 
-#result__section {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  grid-gap: 1rem;
-}
 .card__container{
   display: flex; 
   padding: 0;
@@ -33,14 +28,17 @@
   flex-direction: row;
   align-items: center;  
 }
+.duration{
+  margin-left: 0.5rem;
+  font-size: 1rem;
+  font-weight: bolder;
+  width: max-content;
+}
 .time__icon{
   margin-right: 0.5rem;
 }
 .clock{
-  background-image: url(/public/icons/clock.svg);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-color: transparent;
+  background-image: url('/public/icons/clock.svg');
 }
 
 .card__info{  
@@ -48,12 +46,21 @@
   grid-template-columns: 1fr 2fr;
   gap: 0.8rem;
   font-size: 0.8rem;
+  margin-top: 1rem;
 }
 // .card__details{}
 .ingredients__details{
   list-style: none;
   margin-block: 0;
   padding-inline: 0;
+
+  li {
+    font-weight: 800;
+    
+    span{
+      font-weight: initial;
+    }
+  }
 }
 // .ingredients{}
 // .ingredient{}

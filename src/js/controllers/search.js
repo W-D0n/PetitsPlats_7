@@ -1,20 +1,22 @@
 import { renderCard } from '../views/recipesCards';
-import { createDropdownItems } from '../views/tags';
+import { renderDropdowns } from '../views/tags';
 import { updateFilteredRecipes, filterDisplayedTags, displayAllDropdownTags } from './filters';
 
 /**
- * @description filter recipes by input in search fieds and filter dropdown tags
+ * @description filter recipes by input in search fields and then filter dropdown tags
  * @param {*} array
  */
 function researchEvent() {
-  const searchFields = [...document.querySelectorAll('.search__field')];
   const mainSearchField = document.getElementById('mainField');
+  const searchFields = [...document.querySelectorAll('.search__field')];
   let filteredRecipes = [];
 
   mainSearchField.addEventListener('input', () => {
-    filteredRecipes = updateFilteredRecipes();
+    filteredRecipes = updateFilteredRecipes(mainSearchField);
     renderCard(filteredRecipes);
-    createDropdownItems(filteredRecipes);
+    renderDropdowns(filteredRecipes);
+    // console.log('mainSearchField', mainSearchField);
+    // filterDisplayedTags(mainSearchField);
   });
 
   for (const field of searchFields) {

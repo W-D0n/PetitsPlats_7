@@ -1,23 +1,18 @@
 @use '../abstracts/color' as clr;
 
-#tag-list__section {
-  height: 3rem;
-}
-
 .tag-list {
   display: flex;
   gap: 0.5rem;
   justify-content: center;
-  margin-top: 2.5rem;
   margin-block: 0.5rem;
   list-style: none;
 }
+
 .tag-list__item {  
   color: clr.$neutral-font;  
   border-radius: 5px;
   padding: 0.5rem 0.8rem;
-  width: fit-content;
-  
+  width: fit-content;  
 
   &[data-type="ingredients"] {
     background-color: clr.$bg-first;

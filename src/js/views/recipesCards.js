@@ -9,7 +9,7 @@ const createDOM = ({id, name, photo, time, description}) => {
     <img src="https://via.placeholder.com/350x150" alt="${photo}" class="card__thumb">
     <div class="card__content">
       <div class="card__head">
-        <h2 class="recipe__name">${name} ${id}</h2>
+        <h2 class="recipe__name">${name}</h2>
         <div class="time">          
           <p class="duration"><span class="clock"></span> ${time} min</p>
         </div>
@@ -41,6 +41,7 @@ function addIngredients ({id, ingredients}) {
     element.unit == undefined ? element.unit = "" : element.unit;
     element.unit == "grammes" ? element.unit = "g" : element.unit;
     element.unit == "cuillères à soupe" ? element.unit = "cs" : element.unit;
+    element.unit == "Cuillères à soupe" ? element.unit = "cs" : element.unit;
     element.unit == "cuillères à café" ? element.unit = "cc" : element.unit;
   }
 }
@@ -51,7 +52,7 @@ function addIngredients ({id, ingredients}) {
  */
 const ingredientDOM = (element) => { 
   return `
-    <li>${element.ingredient}: <span>${element.quantity} ${element.unit}</span></li>
+    <li>${element.ingredient}  <span>${element.quantity} ${element.unit}</span></li>
   `;
 }
 

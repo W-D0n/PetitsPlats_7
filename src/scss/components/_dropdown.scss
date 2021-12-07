@@ -1,13 +1,6 @@
 @use '../abstracts/color' as clr;
 
-.navbar {
-  display: flex;
-  gap: 1rem;
-  flex-direction: row;
-  // height: 5rem;
-  // justify-content: space-between;
-  z-index: 1;
-}
+
 .dropdown__container {
   display: flex;
   position:relative;

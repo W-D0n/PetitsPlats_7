@@ -182,7 +182,7 @@
       ],
       "time": 45,
       "description": "Etaler la pâte feuilleté aux dimensions du moule, étaler la moutarde sur la pâte feuilleté, ajouter le thon. Découper les tomates en rondelles et les poser sur le poisson, ajouter un peu de crème fraîche sur toute la tarte et recouvrez de gruyère râpé. Cuire au four 30 minutes",
-      "appliance":"Four",
+      "appliance": "Four",
       "ustensils": ["moule à tarte", "râpe à fromage", "couteau"]
     },
     {
@@ -254,7 +254,7 @@
       ],
       "time": 50,
       "description": "Etaler la pate dans les moules à tartelette. Faire cuire la pate 30 minutes. Découper le chocolat en morceau et le faire chauffer, y ajouter la Crème liquide, ajouter le beurre et remuer jusqu'à avoir une pâte homogène. Verser la pate sur les tartelettes. Couper les fraises en 2 et les positionner sur ",
-      "appliance":"Four",
+      "appliance": "Four",
       "ustensils":["moule à tartelettes (6)", "Casserole"]
     },
     {
@@ -326,7 +326,7 @@
       ],
       "time": 15,
       "description":"Peler le concombre le couper 2, retirer les pépins. Couper les olives en morceaux, ainsi que le fromage de chèvre. Ajouter le basilic ainsi que le vinaigre balsamic et l'huile d'olives à votre gout.",
-      "appliance":"Saladier",
+      "appliance": "Saladier",
       "ustensils":["cuillère en bois", "couteau"]
     },
     {
@@ -361,7 +361,7 @@
       ],
       "time": 60,
       "description": "Commencer par cuire les pommes de terre dans l'eau bouillante. Puis epluchez les et coupez les en rondelles. Emincer les oignons puis les faire dorer dans du beurre. Ajouter le jambon fumé coupé en en morceaux ainsi que les pommes de terres. Salez, poivrez à votre gout ( et celui de vos convives ) Laissez cuisiner durant environ 10 minutes puis ajouter le vin blanc. Après 5 minutes, mettre le tout dans un plat à gratin. Coupez le rebelochon, soit en tranches, soit le couper en 2 dans le sens de l'épaisseur et recouvrir les pommes de terre. Cuire au four (environ 220°) durant 25 minutes. C'est prêt !",
-      "appliance":"Four",
+      "appliance": "Four",
       "ustensils": ["plat à gratin", "couteau","Économe"]
     },
     {

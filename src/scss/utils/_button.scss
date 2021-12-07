@@ -1,15 +1,15 @@
-@use '../abstracts/color' as clr;
+// @use '../abstracts/color' as clr;
 
-#myInput {
-  background-image: url('/public/icons/search.svg');
-  background-position: 14px 12px;
-  background-repeat: no-repeat;
-  font-size: 1rem;
-  padding: 14px 20px 12px 45px;
-  border: none;
-  border-bottom: 1px solid clr.$neutral-bg;
-}
+// #myInput {
+//   background-image: url('/public/icons/search.svg');
+//   background-position: 14px 12px;
+//   background-repeat: no-repeat;
+//   font-size: 1rem;
+//   padding: 14px 20px 12px 45px;
+//   border: none;
+//   border-bottom: 1px solid clr.$neutral-bg;
+// }
 
-#myInput:focus {
-  outline: 3px solid clr.$neutral-bg;
-}
+// #myInput:focus {
+//   outline: 3px solid clr.$neutral-bg;
+// }
