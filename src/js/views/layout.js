@@ -124,7 +124,7 @@ const createSelectedTag = (type, value) => {
 }
 
 export function addSelectedTag(type, value) {
-  console.log(type, value);
+  console.log(type, value);,
   const parent = document.querySelector('.tag-list');  
   parent.insertAdjacentHTML('beforeend', createSelectedTag(type, value));
 }
