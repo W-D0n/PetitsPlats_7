@@ -43,9 +43,9 @@ const createSection = (sectionName) => {
 const createSearchField = () => {
   return `
   <form id="searchBar" class="searchBar" role="search">
-  <label class="offscreen" for="mainField"></label>
-  <input type="search" spellcheck="true" id="mainField" data-type="global" autocomplete="off" role="searchbox" aria-label="search by name, ingredient or description" placeholder="Rechercher un ingrédient, un appareil, un ustensile, une recette…">
-  <span class="bi bi-search"></span>
+    <label class="offscreen" for="mainField"></label>
+    <input type="search" spellcheck="true" id="mainField" data-type="global" autocomplete="off" role="searchbox" aria-label="search by name, ingredient or description" placeholder="Rechercher un ingrédient, un appareil, un ustensile, une recette…">
+    <span class="bi bi-search"></span>
   </form>
   `;
 }
@@ -81,7 +81,6 @@ const createDropdown = (cat) => {
 function addHTMLStructure(type, array, parent) {
   array.forEach((el) => {
     let element = type(el);
-    // parent[0].insertAdjacentHTML('afterbegin', element);
     parent[0].insertAdjacentHTML('afterbegin', element);
   });
 }
@@ -124,9 +123,12 @@ const createSelectedTag = (type, value) => {
 }
 
 export function addSelectedTag(type, value) {
-  console.log(type, value);,
-  const parent = document.querySelector('.tag-list');  
-  parent.insertAdjacentHTML('beforeend', createSelectedTag(type, value));
+  const parent = document.querySelector('.tag-list');
+  // if tag isn't already in the list, add it
+  if (!parent.querySelector(`[data-type="${type}"][data-value="${value}"]`)) {
+    parent.insertAdjacentHTML('beforeend', createSelectedTag(type, value));
+  }
+  return;  
 }
 
 /**

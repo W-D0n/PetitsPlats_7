@@ -3,7 +3,7 @@ import { renderDropdowns } from '../views/tags';
 import { updateFilteredRecipes, filterDisplayedTags, displayAllDropdownTags } from './filters';
 
 /**
- * @description filter recipes by input in search fields and then filter dropdown tags
+1 * @description filter recipes by input in search fields and then filter dropdown tags
  * @param {*} array
  */
 function researchEvent() {
@@ -15,21 +15,26 @@ function researchEvent() {
     filteredRecipes = updateFilteredRecipes(mainSearchField);
     renderCard(filteredRecipes);
     renderDropdowns(filteredRecipes);
-    // console.log('mainSearchField', mainSearchField);
-    // filterDisplayedTags(mainSearchField);
   });
 
   for (const field of searchFields) {
     field.addEventListener('input', () => {      
       if (field.value.length > 2) {
         filterDisplayedTags(field);
-      } else if (field.value.length == 0) {
+      } else if (field.value.length < 3) {
         displayAllDropdownTags(field.dataset.type);
       }
     });
   }
 }
+function preventSubmit() {
+  const form = document.querySelector('.searchBar');
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+  });
+}
 
 export function searchEventHandler(recipesArray) {
   researchEvent(recipesArray);
+  preventSubmit();
 }

@@ -1,4 +1,4 @@
-import {addSearchTag} from '../controllers/tags';
+import { addSearchTag, removeSearchTag } from '../controllers/tags';
 
 //domelement > data > fct
 let ingredientList = [];
@@ -7,8 +7,8 @@ let ustensilList = [];
 
 /**
  * @description Setting all dropdown items for each category
- * @param {*} data array of tags
- * @returns {Objects} Fill each array
+ * @param {*} data current list of recipes
+ * @returns {Objects} Fill each array with updated informations
  */
 function setTagLists (data) {
   ingredientList = [];
@@ -38,20 +38,17 @@ function setTagLists (data) {
 }
 
 /**
- * @description inject all dropdown items
- * @param {Object} data 
+ * @description update all dropdown items information
+ * @param {Object} data current list of recipes
  */
 export function createDropdownItems(data) {
   const { ingredientList, applianceList, ustensilList } = setTagLists(data);
-  // console.log('ingredientList : ', ingredientList);
-  // console.log('applianceList : ', applianceList);
-  // console.log('ustensilList : ', ustensilList);
   populateDropdowns(ingredientList, 'ingredients');
   populateDropdowns(applianceList, 'appliance');
   populateDropdowns(ustensilList, 'ustensils');
   addSearchTag();
+  removeSearchTag();
 }
-
 /**
  * @description function that inject items inside dropdown menu. reset for updating list
  * @param {Object} arr array of tags
@@ -73,31 +70,50 @@ function populateDropdowns (array, category) {
 /**
  * @description Show/Hide taglist of each dropdown menu
  */
-function showDropdownTagLists () {
+function showDropdownTagLists () {  
   const dpArray = Array.from(document.querySelectorAll('.dropdown__container'));
   const ingList = document.getElementById('ingredientsList');
   const appList = document.getElementById('applianceList');
   const ustList = document.getElementById('ustensilsList');
   
   for (const element of dpArray) {
-    element.addEventListener('click', (e) => {
+    element.addEventListener('mouseover', () => {
       if(element.contains(document.querySelector('.ingredients'))) {
-        ingList.classList.toggle("show");
+        ingList.classList.add("show");
       }
       if(element.contains(document.querySelector('.appliance'))) {
-        appList.classList.toggle("show");
+        appList.classList.add("show");
       }
       if(element.contains(document.querySelector('.ustensils'))) {
-        ustList.classList.toggle("show");
+        ustList.classList.add("show");
+      }
+    });
+    element.addEventListener('mouseout', () => {
+      if(element.contains(document.querySelector('.ingredients'))) {
+        ingList.classList.remove("show");
+      }
+      if(element.contains(document.querySelector('.appliance'))) {
+        appList.classList.remove("show");
+      }
+      if(element.contains(document.querySelector('.ustensils'))) {
+        ustList.classList.remove("show");
       }
     });
   }  
-  // NEED REWORK - on outside click, close all dropdowns
-  const container = document.querySelector('#dropdown__section');
 }
+
 /**
- * @description render function
- * @param {Object} data 
+ * @description remove selected tag from dropdown
+ * @param {Object} data current list of recipes
+ */
+export function removeDropdownItem(type, value) {
+  const li = document.querySelector(`#${type}List > li[data-value="${value}"]`);
+  li.style.display = 'none';
+}
+
+/**
+ * @description calling render function
+ * @param {Object} data current list of recipes
  */
 export function renderDropdowns(data) {
   createDropdownItems(data);
@@ -105,7 +121,6 @@ export function renderDropdowns(data) {
 
 /**
  * @description event handlers
- * 
  */
 export function showDropdownEventHandlers() {
   showDropdownTagLists();

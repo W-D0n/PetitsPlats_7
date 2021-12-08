@@ -1,5 +1,5 @@
 import { updateFilteredRecipes } from './filters';
-import { renderDropdowns } from '../views/tags';
+import { renderDropdowns, removeDropdownItem } from '../views/tags';
 import { renderCard } from '../views/recipesCards';
 import { addSelectedTag } from '../views/layout';
 
@@ -15,7 +15,7 @@ export let tagList = {
 };
 
 /**
- * @description 
+ * @description when a tag is clicked, it is added to the "search" tagList, and update the filteredRecipes
  */
 export function addSearchTag() {
   const mainSearchField = document.getElementById('mainField');
@@ -28,42 +28,39 @@ export function addSearchTag() {
 
       if (itemType!='appliance') {
         tagList[itemType].add(itemValue);
-        console.log(tagList);
       } else {
         tagList[itemType] = itemValue;
-        console.log(tagList);
       }
       addSelectedTag(itemType, itemValue);
       filteredRecipes = updateFilteredRecipes(mainSearchField);
       
-      console.log('AFTER Add Tag', filteredRecipes);
+      // console.log('AFTER Add Tag', filteredRecipes);
       renderCard(filteredRecipes);
       renderDropdowns(filteredRecipes);
+      removeDropdownItem(itemType, itemValue);
     });
   }
 }
-
-function removeSearchTag() {
+/**
+ * @description when close__tag is clicked, remove the tag from the list, and update the filteredRecipes
+ */
+export function removeSearchTag() {
   const mainSearchField = document.getElementById('mainField');
-  const selectedTagList = document.querySelectorAll('.tag-list');
-  for (const item of selectedTagList) {
-    item.addEventListener('click', (e) => {
-      // console.log(e.target);
-      item.remove(e.target);
-      const itemType = e.target.dataset.type;
-      const itemValue = e.target.dataset.value;
-      console.log('itemType', itemType);
-      console.log('itemValue', itemValue);
-
+  const tagCloseButtonList = document.querySelectorAll('.tag-list__item span');
+  for (const item of tagCloseButtonList) {
+    item.addEventListener('click', () => {
+      const li = item.parentNode;
+      const itemType = item.parentNode.dataset.type;
+      const itemValue = item.parentNode.dataset.value;
+      
+      li.remove();
       if (itemType!='appliance') {
         tagList[itemType].delete(itemValue);
-        console.log('tagList', tagList);
       } else {
-        tagList[itemType].delete(itemValue);
-        console.log('tagList', tagList);
+        // if itemType is appliance (=string), override with empty string.
+        tagList.appliance ='';
       }
       filteredRecipes = updateFilteredRecipes(mainSearchField);
-      console.log('AFTER Remove Tag', filteredRecipes);
       renderCard(filteredRecipes);
       renderDropdowns(filteredRecipes);
     });
@@ -75,5 +72,4 @@ function removeSearchTag() {
  */
 export function tagsEventHandler(recipesArray) {
   renderCard(recipesArray);
-  // removeSearchTag();
 }
