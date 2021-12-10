@@ -1,6 +1,7 @@
 import { renderCard } from '../views/recipesCards';
+import { displayError } from '../views/layout';
 import { renderDropdowns } from '../views/tags';
-import { updateFilteredRecipes, filterDisplayedTags, displayAllDropdownTags } from './filters';
+import { updateFilter, filterDisplayedTags, displayAllDropdownTags } from './filters';
 
 /**
 1 * @description filter recipes by input in search fields and then filter dropdown tags
@@ -12,10 +13,17 @@ function researchEvent() {
   let filteredRecipes = [];
 
   mainSearchField.addEventListener('input', () => {
-    filteredRecipes = updateFilteredRecipes(mainSearchField);
+    // filteredRecipes = updateFilter(mainSearchField);
+    filteredRecipes = updateFilter(mainSearchField);
     renderCard(filteredRecipes);
     renderDropdowns(filteredRecipes);
+
+    //if filteredRecipes is empty, display error message
+    if (filteredRecipes.length === 0) {
+      displayError();
+    }
   });
+
 
   for (const field of searchFields) {
     field.addEventListener('input', () => {      

@@ -1,4 +1,4 @@
-import { updateFilteredRecipes } from './filters';
+import { updateFilter } from './filters';
 import { renderDropdowns, removeDropdownItem } from '../views/tags';
 import { renderCard } from '../views/recipesCards';
 import { addSelectedTag } from '../views/layout';
@@ -32,9 +32,9 @@ export function addSearchTag() {
         tagList[itemType] = itemValue;
       }
       addSelectedTag(itemType, itemValue);
-      filteredRecipes = updateFilteredRecipes(mainSearchField);
+      filteredRecipes = updateFilter(mainSearchField);
+      console.log(tagList);
       
-      // console.log('AFTER Add Tag', filteredRecipes);
       renderCard(filteredRecipes);
       renderDropdowns(filteredRecipes);
       removeDropdownItem(itemType, itemValue);
@@ -60,7 +60,8 @@ export function removeSearchTag() {
         // if itemType is appliance (=string), override with empty string.
         tagList.appliance ='';
       }
-      filteredRecipes = updateFilteredRecipes(mainSearchField);
+      // filteredRecipes = resetFilter();
+      filteredRecipes = updateFilter(mainSearchField);
       renderCard(filteredRecipes);
       renderDropdowns(filteredRecipes);
     });

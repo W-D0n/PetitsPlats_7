@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', initApp(recipesFullList));
 
 searchEventHandler(recipesFullList);
 tagsEventHandler(recipesFullList);
-//render(updateFilteredRecipes(recipesArray, searchField));
+//render(updateFilter(recipesArray, searchField));
 //render avec la current list ?
 // renderDropdowns(recipesFullList);
 // renderCard(recipesFullList);

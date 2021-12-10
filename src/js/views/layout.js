@@ -130,6 +130,14 @@ export function addSelectedTag(type, value) {
   }
   return;  
 }
+  
+export function displayError() {
+  const parent = document.querySelector('#result__section');
+  const errorMessage = document.createElement('p');
+  errorMessage.classList.add('error');
+  errorMessage.textContent = 'Aucune recette ne correspond à votre critère... vous pouvez chercher « tarte aux pommes », « poisson », etc';
+  parent.insertAdjacentElement('afterbegin', errorMessage);
+}
 
 /**
  * @description inject layout
