@@ -8,6 +8,10 @@ import { searchEventHandler } from './src/js/controllers/search';
 import { tagsEventHandler } from './src/js/controllers/tags';
 import { renderCard } from './src/js/views/recipesCards';
 
+/**
+ * @description After the loading page, Initialize the page with first recipes and renders
+ * @param {Object} recipesFullList 
+ */
 const initApp = (recipesFullList) => {
   renderDOMTree();
   renderDropdowns(recipesFullList);
@@ -17,14 +21,8 @@ const initApp = (recipesFullList) => {
 
 document.addEventListener('DOMContentLoaded', initApp(recipesFullList));
 
+/**
+ * @description Search event handlers
+ */
 searchEventHandler(recipesFullList);
 tagsEventHandler(recipesFullList);
-//render(updateFilteredRecipes(recipesArray, searchField));
-//render avec la current list ?
-// renderDropdowns(recipesFullList);
-// renderCard(recipesFullList);
-// renderFilteredRecipes(filteredRecipes)
-
-// showDropdownEventHandlers();
-
-// filterRecipes(recipesFullList);

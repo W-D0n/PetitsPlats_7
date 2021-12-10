@@ -131,6 +131,17 @@ export function addSelectedTag(type, value) {
   return;  
 }
 
+// display error message when search field input don't match any result
+export function displayError () {
+  console.log('display error');
+  const parent = document.getElementById('result__section');
+  const error = document.createElement('p');
+  error.classList.add('error');
+  error.innerHTML = 'Aucune recette ne correspond à votre critère... vous pouvez chercher « tarte aux pommes », « poisson », etc.';
+  parent.insertAdjacentElement('beforeend', error);
+}
+
+
 /**
  * @description inject layout
  */

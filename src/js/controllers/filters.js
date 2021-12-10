@@ -22,9 +22,9 @@ export function filterRecipeByIngredientTags (recipeIngredients) {
   for (let index = 0; index < ingredientTags.length; index++) {      
     const ingredientTag = ingredientTags[index].toLowerCase();      
     if (!ingredients_.includes(ingredientTag)) {
-        return false;
-      }
+      return false;
     }
+  }
   return true;
 }
 
@@ -84,6 +84,20 @@ export function displayAllDropdownTags(fieldType) {
  */
 export function updateFilteredRecipes(input) {
   let currentFilteredRecipes = [...recipesFullList];
+  // à confirmer
+  // const searchWithTextField =  input.value.length > 2;
+  // currentFilteredRecipes = recipesFullList.filter(recipe => {
+  //   return (
+  //     searchWithTextField && 
+  //     !recipe.name.toLowerCase().match(input.value) &&
+  //     !recipe.description.toLowerCase().match(input.value) && 
+  //     !filterByIngredients(input.value, recipe.ingredients)         
+  //   ) || 
+  //   (tagList.ingredients.size > 0 && !filterRecipeByIngredientTags(recipe.ingredients)) ||
+  //   (tagList.appliance && recipe.appliance != tagList.appliance) ||
+  //   (tagList.ustensils.size > 0 && !filterRecipeByUstensilsTags(recipe.ustensils)) 
+  // });
+
   const searchWithTextField =  input.value.length > 2;
   for (let i = 0; i < currentFilteredRecipes.length; i++) {
     const recipe = currentFilteredRecipes[i];

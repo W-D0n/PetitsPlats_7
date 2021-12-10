@@ -69,6 +69,7 @@ export function removeSearchTag() {
 
 /**
  * @description
+ * @param {Object} array of recipes
  */
 export function tagsEventHandler(recipesArray) {
   renderCard(recipesArray);

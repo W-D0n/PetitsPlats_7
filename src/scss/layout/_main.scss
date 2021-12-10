@@ -1,8 +1,9 @@
+@use '../abstracts/color' as clr;
+
 
 #tag-list__section {
   height: 3rem;
 }
-
 .navbar {
   display: flex;
   gap: 1rem;
@@ -13,7 +14,14 @@
 }
 #result__section {
   display: grid;
+  position:relative;
   grid-template-columns: repeat(3, minmax(300px, 1fr));
   grid-gap: 1rem;
   margin-top: 1rem;
+}
+.error {
+  top: 3rem;
+  font-size: larger;
+  position: absolute;
+  color: clr.$error;
 }
