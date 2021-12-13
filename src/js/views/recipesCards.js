@@ -11,7 +11,7 @@ const createDOM = ({id, name, photo, time, description}) => {
       <div class="card__head">
         <h2 class="recipe__name">${name}</h2>
         <div class="time">          
-          <p class="duration"><span class="clock"></span> ${time} min</p>
+          <p class="duration"> ${time} min</p>
         </div>
       </div>
       <div class="card__info">
@@ -28,7 +28,7 @@ const createDOM = ({id, name, photo, time, description}) => {
 }
 
 /**
- * @description
+ * @description fill ingredient from recipe
  * @param {Object} recipe
  */
 function addIngredients ({id, ingredients}) {
@@ -36,7 +36,7 @@ function addIngredients ({id, ingredients}) {
   for (let index = 0; index < ingredients.length; index++) {
     const element = ingredients[index];
     ul.insertAdjacentHTML('beforeend', ingredientDOM(element));
-    
+    // some text improvements
     element.quantity == undefined ? element.quantity = "" : element.quantity;
     element.unit == undefined ? element.unit = "" : element.unit;
     element.unit == "grammes" ? element.unit = "g" : element.unit;

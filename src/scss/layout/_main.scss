@@ -1,6 +1,5 @@
 @use '../abstracts/color' as clr;
 
-
 #tag-list__section {
   height: 3rem;
 }
@@ -8,8 +7,6 @@
   display: flex;
   gap: 1rem;
   flex-direction: row;
-  // height: 5rem;
-  // justify-content: space-between;
   z-index: 1;
 }
 #result__section {

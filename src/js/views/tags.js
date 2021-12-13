@@ -1,6 +1,5 @@
 import { addSearchTag, removeSearchTag } from '../controllers/tags';
 
-//domelement > data > fct
 let ingredientList = [];
 let applianceList = [];
 let ustensilList = [];

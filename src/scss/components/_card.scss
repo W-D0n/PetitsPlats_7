@@ -22,7 +22,6 @@
   justify-content: space-between;
   align-items: center;
 }
-// .recipe__name{}
 .time {
   display: flex;
   flex-direction: row;
@@ -37,10 +36,6 @@
 .time__icon{
   margin-right: 0.5rem;
 }
-.clock{
-  background-image: url('/public/icons/clock.svg');
-}
-
 .card__info{  
   display: grid;
   grid-template-columns: 1fr 2fr;
@@ -48,7 +43,6 @@
   font-size: 0.8rem;
   margin-top: 1rem;
 }
-// .card__details{}
 .ingredients__details{
   list-style: none;
   margin-block: 0;
@@ -62,17 +56,6 @@
     }
   }
 }
-// .ingredients{}
-// .ingredient{}
-// .quant{}
-
 .card__desc{
   overflow: hidden;
 }
-
-// .description{
-//   white-space: nowrap;
-//   overflow: hidden;
-//   text-overflow: ellipsis;
-// }
-

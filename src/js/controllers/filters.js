@@ -16,7 +16,6 @@ function filterByIngredients (input, recipe) {
 export function filterRecipeByIngredientTags (recipeIngredients) {  
   const ingredientTags = Array.from(tagList.ingredients);
   // transform array objet to a new string array with only the name of ingredient(string) objects
-  // on cherchait à tester la présence d'un string par rapport à un objet dans un array de string (FAUX)
   const ingredients_ = recipeIngredients.map(ingredient => ingredient.ingredient.toLowerCase());
   
   for (let index = 0; index < ingredientTags.length; index++) {      
@@ -64,7 +63,6 @@ function filterTagsMatchingWithSearchText (nodeList, searchText) {
   }
 }
 
-
 /**
  * @description Display all tags (kind of a reset).
  * @param {String} fieldType
@@ -84,19 +82,6 @@ export function displayAllDropdownTags(fieldType) {
  */
 export function updateFilteredRecipes(input) {
   let currentFilteredRecipes = [...recipesFullList];
-  // à confirmer
-  // const searchWithTextField =  input.value.length > 2;
-  // currentFilteredRecipes = recipesFullList.filter(recipe => {
-  //   return (
-  //     searchWithTextField && 
-  //     !recipe.name.toLowerCase().match(input.value) &&
-  //     !recipe.description.toLowerCase().match(input.value) && 
-  //     !filterByIngredients(input.value, recipe.ingredients)         
-  //   ) || 
-  //   (tagList.ingredients.size > 0 && !filterRecipeByIngredientTags(recipe.ingredients)) ||
-  //   (tagList.appliance && recipe.appliance != tagList.appliance) ||
-  //   (tagList.ustensils.size > 0 && !filterRecipeByUstensilsTags(recipe.ustensils)) 
-  // });
 
   const searchWithTextField =  input.value.length > 2;
   for (let i = 0; i < currentFilteredRecipes.length; i++) {

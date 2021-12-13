@@ -1,14 +1,12 @@
 @use '../abstracts/color' as clr;
 
-
 #mainField {
   width: 90vw;
   background-color: clr.$neutral-bg;
   border-radius: 5px;
   border-style: hidden;
   padding-inline: 1rem;
-  transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
-  
+  transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;  
 
   &:focus-visible {
     outline: none;

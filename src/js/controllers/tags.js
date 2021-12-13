@@ -34,7 +34,6 @@ export function addSearchTag() {
       addSelectedTag(itemType, itemValue);
       filteredRecipes = updateFilteredRecipes(mainSearchField);
       
-      // console.log('AFTER Add Tag', filteredRecipes);
       renderCard(filteredRecipes);
       renderDropdowns(filteredRecipes);
       removeDropdownItem(itemType, itemValue);

@@ -4,8 +4,7 @@ import { renderDropdowns } from '../views/tags';
 import { updateFilteredRecipes, filterDisplayedTags, displayAllDropdownTags } from './filters';
 
 /**
-1 * @description filter recipes by input in search fields and then filter dropdown tags
- * @param {*} array
+ * @description event listeners (search bar + dropdown inputs) which update the filtered recipes
  */
 function researchEvent() {
   const mainSearchField = document.getElementById('mainField');
