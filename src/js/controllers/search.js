@@ -4,8 +4,7 @@ import { renderDropdowns } from '../views/tags';
 import { updateFilter, filterDisplayedTags, displayAllDropdownTags } from './filters';
 
 /**
-1 * @description filter recipes by input in search fields and then filter dropdown tags
- * @param {*} array
+ * @description 
  */
 function researchEvent() {
   const mainSearchField = document.getElementById('mainField');
@@ -24,7 +23,6 @@ function researchEvent() {
     }
   });
 
-
   for (const field of searchFields) {
     field.addEventListener('input', () => {      
       if (field.value.length > 2) {
@@ -35,6 +33,10 @@ function researchEvent() {
     });
   }
 }
+
+/**
+ * @description Prevent form behavior when enter key is pressed
+ */
 function preventSubmit() {
   const form = document.querySelector('.searchBar');
   form.addEventListener('submit', (e) => {

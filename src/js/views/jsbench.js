@@ -1770,7 +1770,7 @@ function updateFilter(input) {
         searchWithTextField && 
         !recipe.name.toLowerCase().match(input.value) &&
         !recipe.description.toLowerCase().match(input.value) && 
-        !filterByIngredients(input.value, recipe.ingredients)
+        !isInputMatchIngredient(input.value, recipe.ingredients)
       ) {
         currentFilteredRecipes.splice(i, 1);
         i--;
