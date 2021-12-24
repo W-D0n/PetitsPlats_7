@@ -29,10 +29,11 @@ export function isTagInRecipeIngredientsList (recipeIngredients) {
   
   for (let index = 0; index < ingredientTags.length; index++) {      
     const ingredientTag = ingredientTags[index].toLowerCase();      
-    if (ingredients_.includes(ingredientTag)) { //
-        return true;
+    if (!ingredients_.includes(ingredientTag)) {
+        return false;
       }
     }
+  return true;    
 }
 
 /**
@@ -44,10 +45,11 @@ export function isTagInRecipeUstensilsList(recipeUstensils) {
   const ustensilTags = Array.from(tagList.ustensils);
   for (let index = 0; index < ustensilTags.length; index++) {
     const ustensil = ustensilTags[index];
-    if (recipeUstensils.includes(ustensil)) {
-      return true;
+    if (!recipeUstensils.includes(ustensil)) {
+      return false;
     }
   }
+  return true;
 }
 
 /**
@@ -102,11 +104,11 @@ export function updateFilter(input) {
       recipe.description.toLowerCase().match(input.value) ||
       isInputMatchIngredient(input.value, recipe.ingredients)
     ) &&
-      (tagList.ingredients.size == 0 || isTagInRecipeIngredientsList(recipe.ingredients)) ||
-      (!tagList.appliance || recipe.appliance == tagList.appliance) ||
+      (tagList.ingredients.size == 0 || isTagInRecipeIngredientsList(recipe.ingredients)) &&
+      (!tagList.appliance || recipe.appliance == tagList.appliance) &&
       (tagList.ustensils.size == 0 || isTagInRecipeUstensilsList(recipe.ustensils));
   });
-
+  console.log('temp', temp);
   // const currentFilteredRecipes = recipesFullList.filter(n => !temp.includes(n));
 
   return temp;
