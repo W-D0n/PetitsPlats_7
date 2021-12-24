@@ -21,9 +21,9 @@ const createZone = (element) => {
  */
 const createLogo = (img) => {
   return `
-  <div class="homepage__link" href="#" role="logo" aria-label="link to homepage">
+  <a class="homepage__link" href="../../../index.html" aria-label="link to homepage">
     <img class="logo" src="${img}" alt="" />
-  </div> 
+  </a> 
   `;
 }
 /**
@@ -33,7 +33,7 @@ const createLogo = (img) => {
  */
 const createSection = (sectionName) => {
   return `
-  <section id="${sectionName}"></section>
+  <div id="${sectionName}"></div>
   `;
 }
 /**
@@ -42,9 +42,9 @@ const createSection = (sectionName) => {
  */
 const createSearchField = () => {
   return `
-  <form id="searchBar" class="searchBar" role="search">
+  <form id="searchBar" class="searchBar">
     <label class="offscreen" for="mainField"></label>
-    <input type="search" spellcheck="true" id="mainField" data-type="global" autocomplete="off" role="searchbox" aria-label="search by name, ingredient or description" placeholder="Rechercher un ingrédient, un appareil, un ustensile, une recette…">
+    <input type="search" spellcheck="true" id="mainField" data-type="global" autocomplete="off" aria-label="search by name, ingredient or description" placeholder="Rechercher un ingrédient, un appareil, un ustensile, une recette…">
     <span class="bi bi-search"></span>
   </form>
   `;
@@ -67,7 +67,7 @@ const createNavbar = () => {
 const createDropdown = (cat) => {
   return `
     <div class="dropdown__container ${cat}">
-      <input type="text" class="search__field dropdown" data-type="${cat}" autocomplete="false" placeholder="${cat}" aria-label="search by ${cat}">
+      <input type="text" class="search__field dropdown" data-type="${cat}" autocomplete="off" placeholder="${cat}" aria-label="search by ${cat}">
       <ul class="dropdown__content" id="${cat}List"></ul>
     </div>
   `;
