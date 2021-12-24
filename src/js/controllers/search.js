@@ -24,7 +24,7 @@ function researchEvent() {
   });
 
   for (const field of searchFields) {
-    field.addEventListener('input', () => {      
+    field.addEventListener('input', () => {
       if (field.value.length > 2) {
         filterDisplayedTags(field);
       } else if (field.value.length < 3) {

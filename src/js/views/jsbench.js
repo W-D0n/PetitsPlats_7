@@ -1734,10 +1734,10 @@ let tagList = {
   'ustensils': ['couteau', 'verres']
 };
 
-function isInputMatchIngredient (input, recipe) {
+function isInputMatchIngredient(input, recipe) {
   for (let i = 0; i < recipe.length; i++) {
     const element = recipe[i];
-    const ingredientLowerCase = element.ingredient.toLowerCase();    
+    const ingredientLowerCase = element.ingredient.toLowerCase();
     if (ingredientLowerCase.match(input)) {
       return true;
     }
@@ -1762,18 +1762,18 @@ function updateFilter(input) {
 
 function updateFilter(input) {
   let currentFilteredRecipes = [...recipesFullList];
-  
-  const searchWithTextField =  input.value.length > 2;
+
+  const searchWithTextField = input.value.length > 2;
   for (let i = 0; i < currentFilteredRecipes.length; i++) {
     const recipe = currentFilteredRecipes[i];
-    if(
-        searchWithTextField && 
-        !recipe.name.toLowerCase().match(input.value) &&
-        !recipe.description.toLowerCase().match(input.value) && 
-        !isInputMatchIngredient(input.value, recipe.ingredients)
-      ) {
-        currentFilteredRecipes.splice(i, 1);
-        i--;
+    if (
+      searchWithTextField &&
+      !recipe.name.toLowerCase().match(input.value) &&
+      !recipe.description.toLowerCase().match(input.value) &&
+      !isInputMatchIngredient(input.value, recipe.ingredients)
+    ) {
+      currentFilteredRecipes.splice(i, 1);
+      i--;
     }
   }
   return currentFilteredRecipes;

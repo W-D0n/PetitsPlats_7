@@ -12,6 +12,7 @@
   // justify-content: space-between;
   z-index: 1;
 }
+
 #result__section {
   display: grid;
   position: relative;
@@ -19,6 +20,7 @@
   grid-gap: 1rem;
   margin-top: 1rem;
 }
+
 .error{
   color: clr.$error;
   position:absolute;

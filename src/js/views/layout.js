@@ -108,7 +108,7 @@ function addDropdowns(array) {
   array.forEach((el) => {
     parent.insertAdjacentHTML('beforeend', createDropdown(el));
   });
-  
+
 }
 
 /**
@@ -128,9 +128,9 @@ export function addSelectedTag(type, value) {
   if (!parent.querySelector(`[data-type="${type}"][data-value="${value}"]`)) {
     parent.insertAdjacentHTML('beforeend', createSelectedTag(type, value));
   }
-  return;  
+  return;
 }
-  
+
 export function displayError() {
   const parent = document.querySelector('#result__section');
   const errorMessage = document.createElement('p');

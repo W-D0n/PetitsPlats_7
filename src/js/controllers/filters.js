@@ -6,10 +6,10 @@ import { tagList } from './tags';
  * @param {Object} recipeUstensils 
  * @returns {Boolean}
  */
-function isInputMatchIngredient (input, recipe) {
+function isInputMatchIngredient(input, recipe) {
   for (let i = 0; i < recipe.length; i++) {
     const element = recipe[i];
-    const ingredientLowerCase = element.ingredient.toLowerCase();    
+    const ingredientLowerCase = element.ingredient.toLowerCase();
     if (ingredientLowerCase.match(input)) {
       return true;
     }
@@ -22,18 +22,18 @@ function isInputMatchIngredient (input, recipe) {
  * @param {Object} recipeUstensils 
  * @returns {Boolean}
  */
-export function isTagInRecipeIngredientsList (recipeIngredients) {  
+export function isTagInRecipeIngredientsList(recipeIngredients) {
   const ingredientTags = Array.from(tagList.ingredients);
   // transform array objet to a new string array with only the name of ingredient(string) objects
   const ingredients_ = recipeIngredients.map(ingredient => ingredient.ingredient.toLowerCase());
-  
-  for (let index = 0; index < ingredientTags.length; index++) {      
-    const ingredientTag = ingredientTags[index].toLowerCase();      
+
+  for (let index = 0; index < ingredientTags.length; index++) {
+    const ingredientTag = ingredientTags[index].toLowerCase();
     if (!ingredients_.includes(ingredientTag)) {
-        return false;
-      }
+      return false;
     }
-  return true;    
+  }
+  return true;
 }
 
 /**
@@ -56,7 +56,7 @@ export function isTagInRecipeUstensilsList(recipeUstensils) {
  * @description Filter tags. Get nodeList from DOM. Calling function that check if tag match with searchText.
  * @param {String} field 
  */
-export function filterDisplayedTags (field) {
+export function filterDisplayedTags(field) {
   let nodeList = document.querySelectorAll(`#${field.dataset.type}List li`);
   filterTagsMatchingWithSearchText(nodeList, field.value.toLowerCase());
 }
@@ -65,10 +65,10 @@ export function filterDisplayedTags (field) {
  * @param {Object} nodelist array of nodes
  * @param {String} searchText
  */
-function filterTagsMatchingWithSearchText (nodeList, searchText) {
+function filterTagsMatchingWithSearchText(nodeList, searchText) {
   for (let i = 0; i < nodeList.length; i++) {
     const element = nodeList[i];
-    if(element.textContent.toLowerCase().match(searchText)) {
+    if (element.textContent.toLowerCase().match(searchText)) {
       element.style.display = 'block';
     } else {
       element.style.display = 'none';

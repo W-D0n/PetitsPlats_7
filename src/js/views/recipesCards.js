@@ -3,7 +3,7 @@
  * @param {Object} recipe
  * @returns {string}
  */
-const createDOM = ({id, name, photo, time, description}) => {
+const createDOM = ({ id, name, photo, time, description }) => {
   return `
   <div class="card__container" data-id="${id}">
     <img src="https://via.placeholder.com/350x150" alt="${photo}" class="card__thumb">
@@ -31,12 +31,12 @@ const createDOM = ({id, name, photo, time, description}) => {
  * @description
  * @param {Object} recipe
  */
-function addIngredients ({id, ingredients}) {
+function addIngredients({ id, ingredients }) {
   const ul = document.getElementById(`ingredientList${id}`);
   for (let index = 0; index < ingredients.length; index++) {
     const element = ingredients[index];
     ul.insertAdjacentHTML('beforeend', ingredientDOM(element));
-    
+
     element.quantity == undefined ? element.quantity = "" : element.quantity;
     element.unit == undefined ? element.unit = "" : element.unit;
     element.unit == "grammes" ? element.unit = "g" : element.unit;
@@ -50,7 +50,7 @@ function addIngredients ({id, ingredients}) {
  * @description create the DOM element for each ingredient
  * @param {Object} recipe
  */
-const ingredientDOM = (element) => { 
+const ingredientDOM = (element) => {
   return `
     <li>${element.ingredient}  <span>${element.quantity} ${element.unit}</span></li>
   `;
@@ -73,6 +73,6 @@ function addCards(recipesArray) {
  * @description calling the function to create/add cards to the DOM
  * @param {Object} filteredrecipe
  */
-export function renderCard(filteredRecipes){
+export function renderCard(filteredRecipes) {
   addCards(filteredRecipes);
 }

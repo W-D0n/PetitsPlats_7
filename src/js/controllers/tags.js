@@ -26,7 +26,7 @@ export function addSearchTag() {
       const itemType = item.dataset.type;
       const itemValue = item.dataset.value;
 
-      if (itemType!='appliance') {
+      if (itemType != 'appliance') {
         tagList[itemType].add(itemValue);
       } else {
         tagList[itemType] = itemValue;
@@ -34,7 +34,7 @@ export function addSearchTag() {
       addSelectedTag(itemType, itemValue);
       filteredRecipes = updateFilter(mainSearchField);
       console.log(tagList);
-      
+
       renderCard(filteredRecipes);
       renderDropdowns(filteredRecipes);
       removeDropdownItem(itemType, itemValue);
@@ -52,13 +52,13 @@ export function removeSearchTag() {
       const li = item.parentNode;
       const itemType = item.parentNode.dataset.type;
       const itemValue = item.parentNode.dataset.value;
-      
+
       li.remove();
-      if (itemType!='appliance') {
+      if (itemType != 'appliance') {
         tagList[itemType].delete(itemValue);
       } else {
         // if itemType is appliance (=string), override with empty string.
-        tagList.appliance ='';
+        tagList.appliance = '';
       }
       // filteredRecipes = resetFilter();
       filteredRecipes = updateFilter(mainSearchField);
