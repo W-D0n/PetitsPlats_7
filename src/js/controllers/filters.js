@@ -97,18 +97,17 @@ export function updateFilter(input) {
 
   temp = recipesFullList.filter(recipe => {
     return (
-      searchWithTextField &&
-      !recipe.name.toLowerCase().match(input.value) &&
-      !recipe.description.toLowerCase().match(input.value) &&
-      !isInputMatchIngredient(input.value, recipe.ingredients)
-    ) ||
-      (tagList.ingredients.size > 0 && !isTagInRecipeIngredientsList(recipe.ingredients)) ||
-      (tagList.appliance && recipe.appliance != tagList.appliance) ||
-      (tagList.ustensils.size > 0 && !isTagInRecipeUstensilsList(recipe.ustensils));
+      !searchWithTextField ||
+      recipe.name.toLowerCase().match(input.value) ||
+      recipe.description.toLowerCase().match(input.value) ||
+      isInputMatchIngredient(input.value, recipe.ingredients)
+    ) &&
+      (tagList.ingredients.size == 0 || isTagInRecipeIngredientsList(recipe.ingredients)) ||
+      (!tagList.appliance || recipe.appliance == tagList.appliance) ||
+      (tagList.ustensils.size == 0 || isTagInRecipeUstensilsList(recipe.ustensils));
   });
 
-  const currentFilteredRecipes = recipesFullList.filter(n => !temp.includes(n));
-  console.log('currentFilteredRecipes', currentFilteredRecipes);
+  // const currentFilteredRecipes = recipesFullList.filter(n => !temp.includes(n));
 
-  return currentFilteredRecipes;
+  return temp;
 }
