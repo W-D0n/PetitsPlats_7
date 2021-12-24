@@ -108,7 +108,7 @@ function addDropdowns(array) {
   array.forEach((el) => {
     parent.insertAdjacentHTML('beforeend', createDropdown(el));
   });
-  
+
 }
 
 /**
@@ -128,11 +128,11 @@ export function addSelectedTag(type, value) {
   if (!parent.querySelector(`[data-type="${type}"][data-value="${value}"]`)) {
     parent.insertAdjacentHTML('beforeend', createSelectedTag(type, value));
   }
-  return;  
+  return;
 }
 
 // display error message when search field input don't match any result
-export function displayError () {
+export function displayError() {
   console.log('display error');
   const parent = document.getElementById('result__section');
   const error = document.createElement('p');

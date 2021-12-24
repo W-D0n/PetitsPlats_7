@@ -1,5 +1,5 @@
 import { renderCard } from '../views/recipesCards';
-import {displayError} from '../views/layout';
+import { displayError } from '../views/layout';
 import { renderDropdowns } from '../views/tags';
 import { updateFilteredRecipes, filterDisplayedTags, displayAllDropdownTags } from './filters';
 
@@ -17,7 +17,7 @@ function researchEvent() {
     console.log('filteredRecipes length', filteredRecipes.length);
     renderCard(filteredRecipes);
     renderDropdowns(filteredRecipes);
-    
+
     //if filteredRecipes is empty, display error message
     if (filteredRecipes.length === 0) {
       console.log('filteredRecipes is empty');
@@ -26,7 +26,7 @@ function researchEvent() {
   });
 
   for (const field of searchFields) {
-    field.addEventListener('input', () => {      
+    field.addEventListener('input', () => {
       if (field.value.length > 2) {
         filterDisplayedTags(field);
       } else if (field.value.length < 3) {

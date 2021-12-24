@@ -5,7 +5,7 @@ const urlAPI = '/public/data/Recipes.json';
  * @param {Object} uri 
  * @returns {Object} recipesFullList
  */
-async function getAllRecipes(){
+async function getAllRecipes() {
   let req = new Request(urlAPI, {
     method: 'GET',
     mode: 'cors',
@@ -14,7 +14,7 @@ async function getAllRecipes(){
   try {
     const response = await fetch(req);
     const jsonRecipesData = await response.json();
-    
+
     return jsonRecipesData.recipes;
   } catch (error) {
     console.error(error.status)

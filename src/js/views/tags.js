@@ -9,7 +9,7 @@ let ustensilList = [];
  * @param {*} data current list of recipes
  * @returns {Objects} Fill each array with updated informations
  */
-function setTagLists (data) {
+function setTagLists(data) {
   ingredientList = [];
   applianceList = [];
   ustensilList = [];
@@ -24,7 +24,7 @@ function setTagLists (data) {
       if (!ustensilList.includes(ustensil)) {
         ustensilList.push(ustensil);
       }
-    })    
+    })
     if (!applianceList.includes(recipe.appliance)) {
       applianceList.push(recipe.appliance);
     }
@@ -53,7 +53,7 @@ export function createDropdownItems(data) {
  * @param {Object} arr array of tags
  * @param {String} category type of dropdown menu
  */
-function populateDropdowns (array, category) {
+function populateDropdowns(array, category) {
   const ul = document.getElementById(`${category}List`);
   ul.innerHTML = '';
   for (let index = 0; index < array.length; index++) {
@@ -69,36 +69,36 @@ function populateDropdowns (array, category) {
 /**
  * @description Show/Hide taglist of each dropdown menu
  */
-function showDropdownTagLists () {  
+function showDropdownTagLists() {
   const dpArray = Array.from(document.querySelectorAll('.dropdown__container'));
   const ingList = document.getElementById('ingredientsList');
   const appList = document.getElementById('applianceList');
   const ustList = document.getElementById('ustensilsList');
-  
+
   for (const element of dpArray) {
     element.addEventListener('mouseover', () => {
-      if(element.contains(document.querySelector('.ingredients'))) {
+      if (element.contains(document.querySelector('.ingredients'))) {
         ingList.classList.add("show");
       }
-      if(element.contains(document.querySelector('.appliance'))) {
+      if (element.contains(document.querySelector('.appliance'))) {
         appList.classList.add("show");
       }
-      if(element.contains(document.querySelector('.ustensils'))) {
+      if (element.contains(document.querySelector('.ustensils'))) {
         ustList.classList.add("show");
       }
     });
     element.addEventListener('mouseout', () => {
-      if(element.contains(document.querySelector('.ingredients'))) {
+      if (element.contains(document.querySelector('.ingredients'))) {
         ingList.classList.remove("show");
       }
-      if(element.contains(document.querySelector('.appliance'))) {
+      if (element.contains(document.querySelector('.appliance'))) {
         appList.classList.remove("show");
       }
-      if(element.contains(document.querySelector('.ustensils'))) {
+      if (element.contains(document.querySelector('.ustensils'))) {
         ustList.classList.remove("show");
       }
     });
-  }  
+  }
 }
 
 /**
