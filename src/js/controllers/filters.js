@@ -108,8 +108,6 @@ export function updateFilter(input) {
       (!tagList.appliance || recipe.appliance == tagList.appliance) &&
       (tagList.ustensils.size == 0 || isTagInRecipeUstensilsList(recipe.ustensils));
   });
-  console.log('temp', temp);
-  // const currentFilteredRecipes = recipesFullList.filter(n => !temp.includes(n));
 
   return temp;
 }
