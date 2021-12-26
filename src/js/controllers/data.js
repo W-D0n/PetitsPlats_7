@@ -1,6 +1,3 @@
-// const baseURL = import.meta.env.BASE_URL;
-// const urlAPI = `${baseURL}/public/data/Recipes.json`;
-// const urlAPI = '/public/data/Recipes.json';
 const urlAPI = '../../data/recipes.json';
 
 
