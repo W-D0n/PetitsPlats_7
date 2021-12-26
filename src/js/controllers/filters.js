@@ -101,6 +101,5 @@ export function updateFilteredRecipes(input) {
       i--;
     }
   }
-  // console.log('currentFilteredRecipes : ', currentFilteredRecipes);
   return currentFilteredRecipes;
 }

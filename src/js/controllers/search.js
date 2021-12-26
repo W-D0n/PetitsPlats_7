@@ -13,14 +13,11 @@ function researchEvent() {
 
   mainSearchField.addEventListener('input', () => {
     filteredRecipes = updateFilteredRecipes(mainSearchField);
-    console.log('filteredRecipes', filteredRecipes);
-    console.log('filteredRecipes length', filteredRecipes.length);
     renderCard(filteredRecipes);
     renderDropdowns(filteredRecipes);
 
     //if filteredRecipes is empty, display error message
     if (filteredRecipes.length === 0) {
-      console.log('filteredRecipes is empty');
       displayError();
     }
   });

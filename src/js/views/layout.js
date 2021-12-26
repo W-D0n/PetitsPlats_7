@@ -133,7 +133,6 @@ export function addSelectedTag(type, value) {
 
 // display error message when search field input don't match any result
 export function displayError() {
-  console.log('display error');
   const parent = document.getElementById('result__section');
   const error = document.createElement('p');
   error.classList.add('error');
