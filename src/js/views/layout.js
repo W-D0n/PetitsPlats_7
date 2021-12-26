@@ -43,7 +43,7 @@ const createSearchField = () => {
   return `
   <form id="searchBar" class="searchBar">
     <label class="offscreen" for="mainField"></label>
-    <input type="search" spellcheck="true" id="mainField" data-type="global" autocomplete="off" aria-label="search by name, ingredient or description" placeholder="Rechercher un ingrédient, un appareil, un ustensile, une recette…">
+    <input type="text" spellcheck="true" id="mainField" data-type="global" autocomplete="off" aria-label="search by name, ingredient or description" placeholder="Rechercher un ingrédient, un appareil, un ustensile, une recette…">
     <span class="bi bi-search"></span>
   </form>
   `;
@@ -67,6 +67,7 @@ const createDropdown = (cat) => {
   return `
     <div class="dropdown__container ${cat}">
       <input type="text" class="search__field dropdown" data-type="${cat}" autocomplete="off" placeholder="${cat}" aria-label="search by ${cat}">
+      <span class="chevron"></span>
       <ul class="dropdown__content" id="${cat}List"></ul>
     </div>
   `;

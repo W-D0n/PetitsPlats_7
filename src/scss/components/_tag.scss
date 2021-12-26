@@ -3,8 +3,8 @@
 .tag-list {
   display: flex;
   gap: 0.5rem;
-  justify-content: center;
-  margin-block: 0.5rem;
+  justify-content: start;
+  padding-inline-start: unset;
   list-style: none;
 }
 

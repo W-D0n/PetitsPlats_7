@@ -12,7 +12,6 @@ import { renderCard } from './src/js/views/recipesCards';
  * @param {Object} recipesFullList 
  */
 const initApp = (recipesFullList) => {
-  console.log(recipesFullList);
   renderDOMTree();
   renderDropdowns(recipesFullList);
   showDropdownEventHandlers(recipesFullList);
