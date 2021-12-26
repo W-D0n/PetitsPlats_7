@@ -1,5 +1,9 @@
 
+<<<<<<< HEAD
 let logoPath = './../icons/logo.png';
+=======
+let logoPath = '../../icons/logo.png';
+>>>>>>> 0b50777909496b203cef25efc3e79de2e9129592
 let zones = ['footer', 'main', 'header'];
 let sections = ['result__section', 'dropdown__section', 'tag-list__section', 'searchArea'];
 let category = ['ingredients', 'appliance', 'ustensils'];

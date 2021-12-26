@@ -1,6 +1,5 @@
 const urlAPI = '../../data/recipes.json';
 
-
 /**
  * Request data from API, test response and return data.
  * @param {Object} uri 
