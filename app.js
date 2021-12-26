@@ -1,5 +1,5 @@
 import './src/scss/style.scss';
-import './public/data/Recipes.json';
+// import './public/data/Recipes.json';
 import { renderDOMTree } from './src/js/views/layout';
 import { renderDropdowns, showDropdownEventHandlers } from './src/js/views/tags';
 
@@ -17,7 +17,7 @@ const initApp = (recipesFullList) => {
   renderDropdowns(recipesFullList);
   showDropdownEventHandlers(recipesFullList);
   renderCard(recipesFullList);
-  console.log('init', recipesFullList);
+  // console.log('init', recipesFullList);
 }
 
 document.addEventListener('DOMContentLoaded', initApp(recipesFullList));

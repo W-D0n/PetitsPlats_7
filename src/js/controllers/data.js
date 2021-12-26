@@ -1,4 +1,8 @@
-const urlAPI = '/public/data/Recipes.json';
+// const baseURL = import.meta.env.BASE_URL;
+// const urlAPI = `${baseURL}/public/data/Recipes.json`;
+// const urlAPI = '/public/data/Recipes.json';
+const urlAPI = '../../data/recipes.json';
+
 
 /**
  * Request data from API, test response and return data.
@@ -20,6 +24,5 @@ async function getAllRecipes() {
     console.error(error.status)
   }
 }
-
 const recipesFullList = await getAllRecipes();
 export default recipesFullList;
