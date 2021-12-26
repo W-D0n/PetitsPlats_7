@@ -1,6 +1,10 @@
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 let logoPath = './../icons/logo.png';
+=======
+let logoPath = '../../icons/logo.png';
+>>>>>>> 0b50777909496b203cef25efc3e79de2e9129592
 =======
 let logoPath = '../../icons/logo.png';
 >>>>>>> 0b50777909496b203cef25efc3e79de2e9129592
