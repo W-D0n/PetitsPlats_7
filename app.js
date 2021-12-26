@@ -17,6 +17,7 @@ const initApp = (recipesFullList) => {
   renderDropdowns(recipesFullList);
   showDropdownEventHandlers(recipesFullList);
   renderCard(recipesFullList);
+  console.log('init', recipesFullList);
 }
 
 document.addEventListener('DOMContentLoaded', initApp(recipesFullList));
