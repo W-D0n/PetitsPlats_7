@@ -1,4 +1,4 @@
-let logoPath = './../icons/logo.png';
+let logoPath = '../../icons/logo.png';
 let zones = ['footer', 'main', 'header'];
 let sections = ['result__section', 'dropdown__section', 'tag-list__section', 'searchArea'];
 let category = ['ingredients', 'appliance', 'ustensils'];
