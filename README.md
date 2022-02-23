@@ -18,3 +18,6 @@ Pour utiliser la version "dev" du projet, Vite est nécessaire :
 `npm run dev`
 
 Puis sur le navigateur : http://localhost:3000/
+
+---
+[![wakatime](https://wakatime.com/badge/user/e9b04158-0482-414a-b06c-6cc1f928b1c7/project/ae91f57b-585b-462b-b0bf-997ecf822ced.svg)](https://wakatime.com/badge/user/e9b04158-0482-414a-b06c-6cc1f928b1c7/project/ae91f57b-585b-462b-b0bf-997ecf822ced)
