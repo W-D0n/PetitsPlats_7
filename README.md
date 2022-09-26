@@ -1,3 +1,8 @@
+<p align="center">
+  <img src="public/icons/logo.png" alt="Sublime's custom image"/>
+</p>
+
+
 # OPENCLASSROOMS Projet 7 - Développez un algorithme de recherche en JavaScript.
 *Freelance missionné par l’entreprise “Les petits plats” en temps que Développeur Front-end pour une mission de 3 mois.*
 
