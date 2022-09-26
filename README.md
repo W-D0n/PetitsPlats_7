@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="public/icons/logo.png" alt="Sublime's custom image"/>
+  <img src="public/icons/logo.png" width="300px" alt="Logo image"/>
 </p>
 
 
