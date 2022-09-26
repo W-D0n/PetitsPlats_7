@@ -3,7 +3,4 @@
 # misc
 .DS_Store
 *.local
-Algorigram_P7_01.jpg
-jsbench_Screenshot.png
-Fiche Fonctionnalite.pdf
-Fiche Fonctionnalite2.pdf
+/docs
