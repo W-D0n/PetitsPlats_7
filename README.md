@@ -3,42 +3,45 @@
 </p>
 
 <p align="center">
-  <img src="" />
+  <img src="https://img.shields.io/badge/vite-%23646CFF.svg?style=flat-square&logo=vite&logoColor=fff" />
+  <img src="https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=fff" />
+  <img src="https://img.shields.io/badge/CSS-1572B6?style=flat-square&logo=css3&logoColor=fff" />
+  <img src="https://img.shields.io/badge/Sass-CC6699?style=flat-square&logo=sass&logoColor=fff" />
+  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=000" />
 </p>
 
 ---
 ## Summary
 ### Context
 - Mise en situation / Case Study.
-- Entreprise
-- Projet
+- Les petits plats éditrice de livre veut créer son application de présentation de recettes / .
 
 ### Goal / Objectif
-- Développez un algorithme de recherche en JavaScript
-- Accéder rapidement à une recette correspondant à un besoin de l’utilisateur dans les recettes déjà reçues.
-- Implémenter la fonctionnalité de recherche.
-- Comparatif de perf des algo.
-- Implémentation de la maquette.
-- Créer 2 algos de recherche.
-- Accéder rapidement à une recette correspondant à un besoin de l'utilisateur dans les recettes déjà reçues.
-- Les résultats de recherche sont actualisés, ainsi que les éléments disponibles dans les champs de recherche avancée.
+- Intégration de maquette / Mockup integration.
+- Développez un algorithme de recherche en JavaScript / Create search algorithm with javascript.
+- Implémenter la fonctionnalité de recherche / Setting up research feature (by keywords or tags).
+- Comparaison de performance (JsBench) / Performance report with JsBench.
 
 ### My function / Rôle
-- Développeur Front-end Freelance.
+- Frontend developper Freelance.
 
 ## Project
 ### Assets
-- 
-### Dependencies
-- 
+- Mockup : [Figma](https://www.figma.com/file/xqeE1ZKlHUWi2Efo8r73NK)
+- User cases : [PDF](https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/Front-End+V2/P6+Algorithms/Cas+d%E2%80%99utilisation+%2303+Filtrer+les+recettes+dans+l%E2%80%99interface+utilisateur.pdf)
+- Recipes Data : [json](https://github.com/OpenClassrooms-Student-Center/P11-front-end-search-engine)
+
 ### Getting Started
-Pour utiliser la version "dev" du projet, Vite est nécessaire : `npm install` => `npm run dev`  
-Puis sur le navigateur : http://localhost:3000/
+Clone the repo : `git clone https://github.com/W-Kamal/PetitsPlats_7.git`  
+Launch local version : `npm run dev` -> http://localhost:3000/
 
 ## Potential improvements / Améliorations possibles
 This project was made for learning a specific concept or tool. Therefore it might appear not complete.  
 If I had to push further this project, I would work on :
-1. 
+1. Improve UI/graphic aspect.
+2. Performance optimisation.
+3. Build a backend.
+4. Fix some UI/CSS issues.
 
 ---
 [![wakatime](https://wakatime.com/badge/user/e9b04158-0482-414a-b06c-6cc1f928b1c7/project/ae91f57b-585b-462b-b0bf-997ecf822ced.svg)](https://wakatime.com/badge/user/e9b04158-0482-414a-b06c-6cc1f928b1c7/project/ae91f57b-585b-462b-b0bf-997ecf822ced)
