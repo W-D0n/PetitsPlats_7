@@ -33,7 +33,9 @@
 
 ### Getting Started
 Clone the repo : `git clone https://github.com/W-Kamal/PetitsPlats_7.git`  
-Launch local version : `npm run dev` -> http://localhost:3000/
+Install dependencies : `pnpm* install`  
+Launch local version : `pnpm* run dev` -> http://localhost:3000/  
+_*use any package manager that suits you_
 
 ## Potential improvements / Améliorations possibles
 This project was made for learning a specific concept or tool. Therefore it might appear not complete.  
