@@ -14,7 +14,7 @@
 ## Summary
 ### Context
 - Mise en situation / Case Study.
-- Les petits plats éditrice de livre veut créer son application de présentation de recettes / .
+- L'entreprise "Les petits plats", éditrice de livre veut créer son application de présentation de recettes / The company "Les petits plats", which edit books wants to develop a web app to display recipes.
 
 ### Goal / Objectif
 - Intégration de maquette / Mockup integration.
